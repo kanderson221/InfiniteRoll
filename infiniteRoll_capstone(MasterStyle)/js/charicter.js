@@ -14,4 +14,8 @@ while (name === "") {
 	
 }
 
+var strength = Math.floor(Math.random(3, 7));
+
+
+
 
