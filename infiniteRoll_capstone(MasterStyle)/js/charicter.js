@@ -14,7 +14,13 @@ while (name === "") {
 	
 }
 
-var strength = Math.floor(Math.random(3, 7));
+var strength = Math.floor(Math.random() * Math.floor(3, 6)) + 1;
+var dexterity = Math.floor(Math.random() * Math.floor(3, 6)) + 1;
+var constitution = Math.floor(Math.random() * Math.floor(3, 6)) + 1;
+var intelligence = Math.floor(Math.random() * Math.floor(3, 6)) + 1;
+var wisdom = Math.floor(Math.random() * Math.floor(3, 6)) + 1;
+var charisma = Math.floor(Math.random() * Math.floor(3, 6)) + 1;
+
 
 
 
