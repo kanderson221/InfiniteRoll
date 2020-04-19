@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang = "en">
-  <head>
+<html lang="en">
+
+<head>
   <title>
     Infinite Roll: Game
   </title>
@@ -8,6 +9,7 @@
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/rwd.css" rel="stylesheet">
 </head>
+
 <body>
   <div id="main" class="row">
     <div id="gameArea" class="col-xs-6
@@ -16,23 +18,27 @@
                               col-lg-6">
       <div id="characterImages">
         <img id="playerImage" src="images/square.png">
-        <p>
-        </p>
         <img id="enemyImage" src="images/circle.png">
       </div>
+      <button id="rollButton" onclick="generateEvent()">
+        Roll
+      </button>
     </div>
-    <div class="col-xs-6
-                col-sm-6
-                col-md-6
-                col-lg-6">
-      <p id="eventLog" class="row"></p>
+    <div class="col-xs-3
+                col-sm-3
+                col-md-3
+                col-lg-3">
       <p>Copper: <span id="copper" class="test"></span></p>
       <p>Silver: <span id="silver" class="test"></span></p>
       <p>Gold: <span id="gold" class="test"></span></p>
     </div>
-    <button id="rollButton" onclick="generateEvent()">
-      Roll
-    </button>
+    <div class="col-xs-3
+                col-sm-3
+                col-md-3
+                col-lg-3">
+      <p id="eventLog" class="row"></p>
+    </div>
   </div>
   <script src="js/events.js"></script>
-</body></html>
+</body>
+</html>
