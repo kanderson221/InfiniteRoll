@@ -15,43 +15,50 @@ function generateEvent() {
   switch (eventID) {
     case 1:
       document.getElementById("eventLog").innerHTML = "Player finds two Copper piece";
-      copperPieces = copperPieces + 2;
+      
+      copperPieces += 2;
+      
+      //Conversion Rates
       if (copperPieces >= 10) {
-        silverPieces = silverPieces + 1;
-        copperPieces = copperPieces - 10;
+        silverPieces += 1;
+        copperPieces -= 10;
       }
       if (silverPieces >= 10) {
-        goldPieces = goldPieces + 1;
-        silverPieces = silverPieces - 10;
+        goldPieces += 1;
+        silverPieces -= 10;
       }
+      
       document.getElementById("copper").innerHTML = copperPieces;
       document.getElementById("silver").innerHTML = silverPieces;
       document.getElementById("gold").innerHTML = goldPieces;
       break;
       
     case 2:
-      if (copperPieces < 5) {
-        document.getElementById("eventLog").innerHTML = "Player has a nice walk";
+      //Prevent losing money when broke
+      if (copperPieces == 0 && silverPieces == 0 && goldPieces == 0) {
+        document.getElementById("eventLog").innerHTML = "Player has a nice walk with their empty coinpurse";
       }
+      //Else the character can lose their money MWAHAHA
       else {
         document.getElementById("eventLog").innerHTML = "Player loses one Copper piece";
-        if (copperPieces <= 0 && silverPieces > 0) {
-          copperPieces = copperPieces - 1;
-        
-          copperPieces = copperPieces + 10;
-        
-          if (silverPieces <= 0 && goldPieces > 0) {
-            silverPieces = silverPieces - 1;
+        //If the character has silver and no copper
+        if (copperPieces == 0 && silverPieces > 0) {
           
-            silverPieces = silverPieces + 10;
-            goldPieces = goldPieces - 1;
-          }
-          else {
-            silverPieces = silverPieces - 1;
-          }
+          silverPieces -= 1;
+          copperPieces += 9;
+          
         }
+        //If character has just gold
+        else if (copperPieces == 0 && silverPieces == 0 && goldPieces > 0) {
+          
+          goldPieces -= 1;
+          silverPieces += 9;
+          copperPieces += 9;
+          
+        }
+        //Character has copper to lose
         else {
-          copperPieces = copperPieces - 1;
+          copperPieces -= 1;
         }
       }
       document.getElementById("copper").innerHTML = copperPieces;
