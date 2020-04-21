@@ -1,16 +1,16 @@
-var name = prompt("What is your charicter's name?");
+var name = prompt("What is your character's name?");
 
  while (name === "") {
 		
-  fName = prompt("Reminder: Please enter your first name:");    
+  name = prompt("Reminder: Please enter your name:");    
 				
 }
 
-var race = prompt("What is your charicter's race?");
+var race = prompt("What is your character's race?");
 
 while (name === "") {
 	
-	var race = prompt("What is your charicter's race?");
+	var race = prompt("What is your character's race?");
 	
 }
 

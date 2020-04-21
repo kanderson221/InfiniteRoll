@@ -10,12 +10,11 @@
 
 button {
   border: none;
+  text-decoration: underline;
 }
 
-img {
-  width: 100px;
-  height: 100px;
-  background-color: white
+a:hover {
+    color:red;
 }
 
 #title {
@@ -25,37 +24,4 @@ img {
 #disclaimer {
   font-size: 20px;
   font-style: italic;
-}
-
-#playerImage {
-  float: left;
-}
-
-#enemyImage {
-  float: right;
-}
-
-#gameArea {
-  border: 3px black solid;
-  /*
-  width: 1000px;
-  height: 500px;
-  */
-}
-
-#main {
-  background-color: white;
-  padding: none;
-}
-
-#main > * {
-  background-color: white;
-}
-
-#outputArea {
-  float: right;
-}
-
-.test {
-  color: red;
 }

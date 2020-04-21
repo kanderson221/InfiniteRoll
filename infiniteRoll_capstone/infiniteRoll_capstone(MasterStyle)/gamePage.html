@@ -1,44 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-
+  
 <head>
   <title>
     Infinite Roll: Game
   </title>
   <meta charset="utf-8">
   <link href="css/styles.css" rel="stylesheet">
+  <link href="css/gamePage_styles.css" rel="stylesheet">
   <link href="css/rwd.css" rel="stylesheet">
 </head>
 
 <body>
-  <div id="main" class="row">
-    <div id="gameArea" class="col-xs-6
-                              col-sm-6
-                              col-md-6
-                              col-lg-6">
-      <div id="characterImages">
-        <img id="playerImage" src="images/square.png">
-        <img id="enemyImage" src="images/circle.png">
+  <h1 id="title">
+    Infinite Roll
+  </h1>
+  <div id="gameArea" class="row">
+    <div class="col-xs-9
+                col-sm-9
+                col-md-9
+                col-lg-9">
+      <div id="enemyArea" class="row">
+        <div class="col-xs-4
+                    col-sm-4
+                    col-md-4
+                    col-lg-4">
+          <p>Name: Chester</p>
+          <p>Race: Mimic</p>
+          <p>Class: Merchant</p>
+          <p>Hit Points: 18</p>
+        </div>
+        <div class="col-xs-4
+                    col-sm-4
+                    col-md-4
+                    col-lg-4">
+          <img id="enemyImage" src="images/circle.png">
+        </div>
+        <div class="col-xs-4
+                    col-sm-4
+                    col-md-4
+                    col-lg-4">
+          <p class="stat">Strength: 18</p>
+          <p class="stat">Dexterity: 18</p>
+          <p class="stat">Constitution: 18</p>
+          <p class="stat">Intelligence: 18</p>
+          <p class="stat">Wisdom: 18</p>
+          <p class="stat">Charisma: 18</p>
+        </div>
       </div>
-      <button id="rollButton" onclick="generateEvent()">
-        Roll
-      </button>
+      <br>
+      <br>
+      <h1>I thought we could maybe put other important text in a space around here, like when Chester asks if you want to buy anything or stuff like that. Sort of like a before it goes into the event log. But maybe not, I just decided to map it out just incase.</h1>
+      <h1>-Jevin</h1>
+      <br>
+      <br>
+      <div class="row">
+        <div class="col-xs-4
+                    col-sm-4
+                    col-md-4
+                    col-lg-4">
+          <p>Name: Kyle</p>
+          <p>Race: Kyle</p>
+          <p>Class: Kyle</p>
+          <p>Hit Points: 5953</p>
+        </div>
+        <div class="col-xs-4
+                    col-sm-4
+                    col-md-4
+                    col-lg-4">
+          <img id="playerImage" src="images/square.png">
+        </div>
+        <div class="col-xs-4
+                    col-sm-4
+                    col-md-4
+                    col-lg-4">
+          <p class="stat">Strength: 18</p>
+          <p class="stat">Dexterity: 18</p>
+          <p class="stat">Constitution: 18</p>
+          <p class="stat">Intelligence: 18</p>
+          <p class="stat">Wisdom: 18</p>
+          <p class="stat">Charisma: 18</p>
+        </div>
+      </div>
     </div>
     <div class="col-xs-3
                 col-sm-3
                 col-md-3
                 col-lg-3">
-      <p>Copper: <span id="copper" class="test"></span></p>
-      <p>Silver: <span id="silver" class="test"></span></p>
-      <p>Gold: <span id="gold" class="test"></span></p>
-    </div>
-    <div class="col-xs-3
-                col-sm-3
-                col-md-3
-                col-lg-3">
-      <p id="eventLog" class="row"></p>
+      <h2>Event Log</h2>
+      <p id="eventLog"></p>
     </div>
   </div>
+  <button id="rollButton" onclick="generateEvent()">
+    Roll
+  </button>
+  <br>
+  <div id="inventory" class="row">
+    <h2>Inventory</h2>
+    <p class="col-xs-2
+              col-sm-2
+              col-md-2
+              col-lg-2">Copper: <span id="copper"></span></p>
+    <p class="col-xs-2
+              col-sm-2
+              col-md-2
+              col-lg-2">Silver: <span id="silver"></span></p>
+    <p class="col-xs-2
+              col-sm-2
+              col-md-2
+              col-lg-2">Gold: <span id="gold"></span></p>
+  </div>
+  <script src="js/character.js"></script>
   <script src="js/events.js"></script>
 </body>
+  
 </html>

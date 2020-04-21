@@ -14,44 +14,51 @@ function generateEvent() {
   
   switch (eventID) {
     case 1:
-      document.getElementById("eventLog").innerHTML = "Player finds two Copper piece";
-      copperPieces = copperPieces + 2;
+      document.getElementById("eventLog").innerHTML = "Player finds two copper piece";
+      
+      copperPieces += 2;
+      
+      //Conversion Rates
       if (copperPieces >= 10) {
-        silverPieces = silverPieces + 1;
-        copperPieces = copperPieces - 10;
+        silverPieces += 1;
+        copperPieces -= 10;
       }
       if (silverPieces >= 10) {
-        goldPieces = goldPieces + 1;
-        silverPieces = silverPieces - 10;
+        goldPieces += 1;
+        silverPieces -= 10;
       }
+      
       document.getElementById("copper").innerHTML = copperPieces;
       document.getElementById("silver").innerHTML = silverPieces;
       document.getElementById("gold").innerHTML = goldPieces;
       break;
       
     case 2:
-      if (copperPieces < 5) {
-        document.getElementById("eventLog").innerHTML = "Player has a nice walk";
+      //Prevent losing money when broke
+      if (copperPieces == 0 && silverPieces == 0 && goldPieces == 0) {
+        document.getElementById("eventLog").innerHTML = "Player has a nice walk with their empty coinpurse";
       }
+      //Else the character can lose their money MWAHAHA
       else {
-        document.getElementById("eventLog").innerHTML = "Player loses one Copper piece";
-        if (copperPieces <= 0 && silverPieces > 0) {
-          copperPieces = copperPieces - 1;
-        
-          copperPieces = copperPieces + 10;
-        
-          if (silverPieces <= 0 && goldPieces > 0) {
-            silverPieces = silverPieces - 1;
+        document.getElementById("eventLog").innerHTML = "Player loses one copper piece";
+        //If the character has silver and no copper
+        if (copperPieces == 0 && silverPieces > 0) {
           
-            silverPieces = silverPieces + 10;
-            goldPieces = goldPieces - 1;
-          }
-          else {
-            silverPieces = silverPieces - 1;
-          }
+          silverPieces -= 1;
+          copperPieces += 9;
+          
         }
+        //If character has just gold
+        else if (copperPieces == 0 && silverPieces == 0 && goldPieces > 0) {
+          
+          goldPieces -= 1;
+          silverPieces += 9;
+          copperPieces += 9;
+          
+        }
+        //Character has copper to lose
         else {
-          copperPieces = copperPieces - 1;
+          copperPieces -= 1;
         }
       }
       document.getElementById("copper").innerHTML = copperPieces;
@@ -60,11 +67,26 @@ function generateEvent() {
       break;
       
     case 3:
-      document.getElementById("eventLog").innerHTML = "A";
+      var randomNumber = Math.round(Math.random() * 250)
+      
+      document.getElementById("eventLog").innerHTML = "Player finds a large sack containing" + randomNumber + " gold pieces. What luck!";
+      
+      goldPieces += randomNumber;
+      
+      document.getElementById("copper").innerHTML = copperPieces;
+      document.getElementById("silver").innerHTML = silverPieces;
+      document.getElementById("gold").innerHTML = goldPieces;
       break;
       
     case 4:
-      document.getElementById("eventLog").innerHTML = "B";
+      document.getElementById("eventLog").innerHTML = "You encounter a merchant: Chester the Generous";
+      
+      //Insert Chester's picture in the picture slot
+      
+      
+      //Create the shop buttons
+      
+      
       break;
       
     case 5:
@@ -248,7 +270,11 @@ function generateEvent() {
       break;
     
     case 50:
-      document.getElementById("eventLog").innerHTML = "W";
+      document.getElementById("eventLog").innerHTML = "Steve has determined you are now worth hsi time. May he have mercy on your soul...";
+      
+      //Insert the Steve picture into the enemy slot
+      
+      
       break;
            
     default:
