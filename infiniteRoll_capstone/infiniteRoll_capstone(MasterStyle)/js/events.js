@@ -8,7 +8,9 @@ document.getElementById("silver").innerHTML = silverPieces;
 document.getElementById("gold").innerHTML = goldPieces;
 
 function generateEvent() {
-  eventID = Math.round(Math.random() * 50);
+  //Changed to math.floor for uniform distribution
+  // the +1 makes the min and max inclusive
+  eventID = Math.floor(Math.random() * (50 + 1);
   
   alert(eventID);
   
@@ -67,7 +69,7 @@ function generateEvent() {
       break;
       
     case 3:
-      var randomNumber = Math.round(Math.random() * 250)
+      var randomNumber = Math.floor(Math.random() * (250 + 1));
       
       document.getElementById("eventLog").innerHTML = "Player finds a large sack containing" + randomNumber + " gold pieces. What luck!";
       
@@ -84,8 +86,18 @@ function generateEvent() {
       //Insert Chester's picture in the picture slot
       
       
-      //Create the shop buttons
+      //Create money amounts for shop items
+      //(Math.random * (Max - Min + 1) + Min)
+      var itemPrice1 = Math.floor(Math.random() * (100 - 50 + 1) + 50);
+      var itemPrice2 = Math.floor(Math.random() * (250 - 100 + 1) + 100);
+      var itemPrice3 = Math.floor(Math.random() * (500 - 250 + 1) + 250);
       
+      //Create the shop buttons
+      var shopBtn1 = document.createElement("BUTTON");
+      var shopBtn2 = document.createElement("BUTTON");
+      var shopBtn3 = document.createElement("BUTTON");
+      shopBtn1.textContent = ""
+      document.getElementById("detailRow").appendChild(shopBtn1);
       
       break;
       
