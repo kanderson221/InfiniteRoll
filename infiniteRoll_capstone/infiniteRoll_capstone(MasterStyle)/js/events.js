@@ -2,6 +2,9 @@ var eventID = 0;
 var copperPieces = 0;
 var silverPieces = 0;
 var goldPieces = 0;
+var piecesOfEight = 0;
+
+var playerDamageBoostMystical = 0;
 
 document.getElementById("copper").innerHTML = copperPieces;
 document.getElementById("silver").innerHTML = silverPieces;
@@ -19,7 +22,7 @@ function generateEvent() {
   document.getElementById("detailRow").textContent = "";
 
   switch (eventID) {
-    case 1:
+    case 1: //////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "Player finds two copper piece";
 
       copperPieces += 2;
@@ -39,7 +42,7 @@ function generateEvent() {
       document.getElementById("gold").innerHTML = goldPieces;
       break;
 
-    case 2:
+    case 2: ///////////////////////////////////////////////////////////////////////////////////////////////////
       //Prevent losing money when broke
       if (copperPieces == 0 && silverPieces == 0 && goldPieces == 0) {
         document.getElementById("eventLog").innerHTML = "Player has a nice walk with their empty coinpurse";
@@ -72,7 +75,7 @@ function generateEvent() {
       document.getElementById("gold").innerHTML = goldPieces;
       break;
 
-    case 3:
+    case 3: //////////////////////////////////////////////////////////////////////////////////////
       var randomNumber = Math.floor(Math.random() * (250 + 1));
 
       document.getElementById("eventLog").innerHTML = "Player finds a large sack containing " + randomNumber + " gold pieces. What luck!";
@@ -84,7 +87,7 @@ function generateEvent() {
       document.getElementById("gold").innerHTML = goldPieces;
       break;
 
-    case 4:
+    case 4: ////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "You encounter a merchant: Chester the Frugile";
 
       //Insert Chester's picture in the picture slot
@@ -112,6 +115,9 @@ function generateEvent() {
 
       //Add event listeners for buttons
       //!!!!!! TODO !!!!!!
+      //
+      //
+      //
 
       document.getElementById("detailRow").appendChild(shopBtn1);
       document.getElementById("detailRow").appendChild(shopBtn2);
@@ -121,191 +127,218 @@ function generateEvent() {
 
       break;
 
-    case 5:
-      document.getElementById("eventLog").innerHTML = "You encounter a merchant: Chester the Generous";
+    case 5: //////////////////////////////////////////////////////////////////////////////////////////////////////
+      document.getElementById("eventLog").innerHTML = "You encounter a merchant: Chester the Generous<br>\n" + lineBreak;
+      
+      //Insert Chester's picture in the picture slot
+      document.getElementById("enemyImage").attributes.src = "images/chester.jpg";
       
       //Chester will give the player either gold or a magic item
-      //!!! TODO !!!
+      var randNum = Math.floor(Math.random() * (10 - 1 + 1) + 1);
+      
+      //1-7 gives gold, 8-10 gives magic item
+      if (randNum < 8) {
+        //Give player gold
+        randGold = Math.floor(Math.random() * (200 - 50 + 1) + 50);
+        goldPieces += randGold;
+        document.getElementById("eventLog").innerHTML += "Chester the Generous gives you " + randGold + " gold pieces for your bravery.";
+        
+      } else {
+        //Give player magic Item
+        
+        
+      }
       
       break;
 
-    case 6:
-      document.getElementById("eventLog").innerHTML = "D";
+    case 6: /////////////////////////////////////////////////////////////////////////////////////////////////
+      document.getElementById("eventLog").innerHTML = "You find a Piece Of Eight<br>\n" + lineBreak;
+      
+      piecesOfEight += 1;
+      
+      if (piecesOfEight >= 8) {
+        document.getElementById("eventLog").innerHTML += "You have found all eight pieces! They crumble in your hands, and you feel stronger somehow...";
+        
+        piecesOfEight -= 8;
+        playerDamageBoostMystical += 5;
+        
+      }
+      
       break;
 
-    case 7:
+    case 7: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "E";
       break;
 
-    case 8:
+    case 8: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "F";
       break;
 
-    case 9:
+    case 9: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "G";
       break;
 
-    case 10:
+    case 10: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "H";
       break;
 
-    case 11:
+    case 11: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "I";
       break;
 
-    case 12:
+    case 12: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "J";
       break;
 
-    case 13:
+    case 13: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "K";
       break;
 
-    case 14:
+    case 14: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "L";
       break;
 
-    case 15:
+    case 15: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "M";
       break;
 
-    case 16:
+    case 16: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "N";
       break;
 
-    case 17:
+    case 17: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "O";
       break;
 
-    case 18:
+    case 18: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "P";
       break;
 
-    case 19:
+    case 19: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "Q";
       break;
 
-    case 20:
+    case 20: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "R";
       break;
 
-    case 21:
+    case 21: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "S";
       break;
 
-    case 22:
+    case 22: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "T";
       break;
 
-    case 23:
+    case 23: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "U";
       break;
 
-    case 24:
+    case 24: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "V";
       break;
 
-    case 25:
+    case 25: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "W";
       break;
 
-    case 26:
+    case 26: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "X";
       break;
 
-    case 27:
+    case 27: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "Y";
       break;
 
-    case 28:
+    case 28: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "Z";
       break;
 
-    case 29:
+    case 29: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "B";
       break;
 
-    case 30:
+    case 30: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "C";
       break;
 
-    case 31:
+    case 31: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "D";
       break;
 
-    case 32:
+    case 32: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "E";
       break;
 
-    case 33:
+    case 33: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "F";
       break;
 
-    case 34:
+    case 34: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "G";
       break;
 
-    case 35:
+    case 35: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "H";
       break;
 
-    case 36:
+    case 36: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "I";
       break;
 
-    case 37:
+    case 37: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "J";
       break;
 
-    case 38:
+    case 38: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "K";
       break;
 
-    case 39:
+    case 39: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "L";
       break;
 
-    case 40:
+    case 40: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "M";
       break;
 
-    case 41:
+    case 41: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "N";
       break;
 
-    case 42:
+    case 42: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "O";
       break;
 
-    case 43:
+    case 43: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "P";
       break;
 
-    case 44:
+    case 44: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "Q";
       break;
 
-    case 45:
+    case 45: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "R";
       break;
 
-    case 46:
+    case 46: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "S";
       break;
 
-    case 47:
+    case 47: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "T";
       break;
 
-    case 48:
+    case 48: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "U";
       break;
 
-    case 49:
+    case 49: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "V";
       break;
 
-    case 50:
+    case 50: /////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "Steve has determined you are now worth his time. May he have mercy on your soul...";
 
       //Insert the Steve picture into the enemy slot
