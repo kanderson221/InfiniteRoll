@@ -9,10 +9,11 @@ var monsterParts = 0;
 var playerDamageBoostMystical = 0;
 var playerToHitBoost = 0;
 
+var playerMaxHealth = document.getElementById("hp").innerHTML;
+var playerCurrentHealth = playerMaxHealth;
+
 var eventLog = "";
 
-document.getElementById("copper").innerHTML = copperPieces;
-document.getElementById("silver").innerHTML = silverPieces;
 document.getElementById("gold").innerHTML = goldPieces;
 document.getElementById("magicItems").innerHTML = magicItems;
 document.getElementById("pOE").innerHTML = piecesOfEight;
@@ -31,75 +32,50 @@ function generateEvent() {
 
   switch (eventID) {
     case 1: //////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "Player finds two copper piece";
+      document.getElementById("eventLog").innerHTML = "Player finds two gold pieces<br>\n" + lineBreak + eventLog;
 
-      copperPieces += 2;
-
-      //Conversion Rates
-      if (copperPieces >= 10) {
-        silverPieces += 1;
-        copperPieces -= 10;
-      }
-      if (silverPieces >= 10) {
-        goldPieces += 1;
-        silverPieces -= 10;
-      }
-
-      document.getElementById("copper").innerHTML = copperPieces;
-      document.getElementById("silver").innerHTML = silverPieces;
+      goldPieces += 2;
+      
       document.getElementById("gold").innerHTML = goldPieces;
       
-      eventLog += 
+      //Add to total log
+      eventLog = document.getElementById("eventLog").innerHTML
       
       break;
 
     case 2: ///////////////////////////////////////////////////////////////////////////////////////////////////
       //Prevent losing money when broke
-      if (copperPieces == 0 && silverPieces == 0 && goldPieces == 0) {
-        document.getElementById("eventLog").innerHTML = "Player has a nice walk with their empty coinpurse";
+      if (goldPieces == 0) {
+        document.getElementById("eventLog").innerHTML = "Player has a nice walk with their empty coinpurse<br>\n" + lineBreak + eventLog;
       }
       //Else the character can lose their money MWAHAHA
       else {
-        document.getElementById("eventLog").innerHTML = "Player loses one copper piece";
-        //If the character has silver and no copper
-        if (copperPieces == 0 && silverPieces > 0) {
-
-          silverPieces -= 1;
-          copperPieces += 9;
-
-        }
-        //If character has just gold
-        else if (copperPieces == 0 && silverPieces == 0 && goldPieces > 0) {
-
-          goldPieces -= 1;
-          silverPieces += 9;
-          copperPieces += 9;
-
-        }
-        //Character has copper to lose
-        else {
-          copperPieces -= 1;
-        }
+        document.getElementById("eventLog").innerHTML = "Player loses one gold piece<br>\n" + lineBreak + eventLog;
+        
+        goldPieces -= 1;
       }
-      document.getElementById("copper").innerHTML = copperPieces;
-      document.getElementById("silver").innerHTML = silverPieces;
+      
+      //Add to total log
+      eventLog = document.getElementById("eventLog").innerHTML
+      
       document.getElementById("gold").innerHTML = goldPieces;
       break;
 
     case 3: //////////////////////////////////////////////////////////////////////////////////////
       var randomNumber = Math.floor(Math.random() * (250 + 1));
 
-      document.getElementById("eventLog").innerHTML = "Player finds a large sack containing " + randomNumber + " gold pieces. What luck!";
+      document.getElementById("eventLog").innerHTML = "Player finds a large sack containing " + randomNumber + " gold pieces. What luck!<br>\n" + lineBreak + eventLog;
 
       goldPieces += randomNumber;
-
-      document.getElementById("copper").innerHTML = copperPieces;
-      document.getElementById("silver").innerHTML = silverPieces;
+      
+      //Add to total log
+      eventLog = document.getElementById("eventLog").innerHTML
+      
       document.getElementById("gold").innerHTML = goldPieces;
       break;
 
     case 4: ////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "You encounter a merchant: Chester the Frugile";
+      document.getElementById("eventLog").innerHTML = "You encounter a merchant: Chester the Frugile<br>\n" + lineBreak + eventLog;
 
       //Insert Chester's picture in the picture slot
       document.getElementById("enemyImage").attributes.src = "images/chester.jpg";
@@ -124,19 +100,75 @@ function generateEvent() {
       shopBtn3.textContent = "Magic Item for: " + itemPrice3 + " gold";
       
       sellBtn.textContent = "Sell monster part for: " + sellPrice + " gold";
+      
+      //Add to total log
+      eventLog = document.getElementById("eventLog").innerHTML
 
       //Add event listeners for buttons
       shopBtn1.addEventListener("click", function(){
-        
+        if (playerCurrentHealth < playerMaxHealth) {
+          if (goldPieces >= itemPrice1) {
+            playerCurrentHealth += 10;
+            goldPieces -= itemPrice1;
+            
+            if (playerCurrentHealth > playerMaxHealth) {
+              playerCurrentHealth = playerMaxHealth;
+            }
+            
+            document.getElementById("eventLog").innerHTML = "You healed yourself at Chester's shop.<br>\n" + lineBreak + eventLog;
+            
+            //Add to total log
+            eventLog = document.getElementById("eventLog").innerHTML
+            
+            document.getElementById("gold").innerHTML = goldPieces;
+            document.getElementById("hp").innerHTML = playerCurrentHealth;
+          }
+        }
       });
+      
       shopBtn2.addEventListener("click", function(){
-        
+        if (goldPieces >= itemPrice2) {
+          playerToHitBoost += 1;
+          goldPieces -= itemPrice2;
+          
+          document.getElementById("eventLog").innerHTML = "You sharpened your sword. It should be easier to hit monsters now.<br>\n" + lineBreak + eventLog;
+          
+          //Add to total log
+          eventLog = document.getElementById("eventLog").innerHTML
+          
+          document.getElementById("gold").innerHTML = goldPieces;
+        }
       });
+      
       shopBtn3.addEventListener("click", function(){
-        
+        if (goldPieces >= itemPrice3) {
+          magicItems += 1;
+          playerDamageBoostMystical += 1;
+          goldPieces -= itemPrice3;
+            
+          document.getElementById("eventLog").innerHTML = "You bought a magic item. You feel stronger now.<br>\n" + lineBreak + eventLog;
+          
+          //Add to total log
+          eventLog = document.getElementById("eventLog").innerHTML
+          
+          document.getElementById("gold").innerHTML = goldPieces;
+          document.getElementById("magicItems").innerHTML = magicItems;
+        }
       });
+      
       sellBtn.addEventListener("click", function(){
-        
+        if (monsterParts > 0) {
+          monsterParts -= 1;
+          goldPieces += sellPrice;
+          
+          document.getElementById("eventLog").innerHTML = "You sold a monster part for gold.<br>\n" + lineBreak + eventLog;
+          
+          //Add to total log
+          eventLog = document.getElementById("eventLog").innerHTML
+          
+          document.getElementById("gold").innerHTML = goldPieces;
+          document.getElementById("monsterParts").innerHTML = monsterParts;
+        }
       });
 
       document.getElementById("detailRow").appendChild(shopBtn1);
@@ -150,6 +182,9 @@ function generateEvent() {
     case 5: //////////////////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("eventLog").innerHTML = "You encounter a merchant: Chester the Generous<br>\n" + lineBreak;
       
+      //Add to total log
+      eventLog = document.getElementById("eventLog").innerHTML
+      
       //Insert Chester's picture in the picture slot
       document.getElementById("enemyImage").attributes.src = "images/chester.jpg";
       
@@ -161,17 +196,22 @@ function generateEvent() {
         //Give player gold
         randGold = Math.floor(Math.random() * (200 - 50 + 1) + 50);
         goldPieces += randGold;
-        document.getElementById("eventLog").innerHTML += "Chester the Generous gives you " + randGold + " gold pieces for your bravery.";
+        document.getElementById("eventLog").innerHTML += "Chester the Generous gives you " + randGold + " gold pieces for your bravery.<br>\n" + lineBreak;
         
       } else {
         //Give player magic Item
         magicItems += 1;
         playerDamageBoostMystical += 1;
         
+        document.getElementById("eventLog").innerHTML += "Chester the Generous gives you a magical item for your bravery.<br>\n" + lineBreak;
+        
       }
       
-      document.getElementById("copper").innerHTML = copperPieces;
-      document.getElementById("silver").innerHTML = silverPieces;
+      document.getElementById("eventLog").innerHTML += eventLog;
+      
+      //Add to total log
+      eventLog = document.getElementById("eventLog").innerHTML
+      
       document.getElementById("gold").innerHTML = goldPieces;
       document.getElementById("magicItems").innerHTML = magicItems;
       
@@ -183,12 +223,17 @@ function generateEvent() {
       piecesOfEight += 1;
       
       if (piecesOfEight >= 8) {
-        document.getElementById("eventLog").innerHTML += "You have found all eight pieces! They crumble in your hands, and you feel stronger somehow...";
+        document.getElementById("eventLog").innerHTML += "You have found all eight pieces! They crumble in your hands, and you feel stronger somehow...<br>\n" + lineBreak;
         
         piecesOfEight -= 8;
         playerDamageBoostMystical += 5;
         
       }
+      
+      document.getElementById("eventLog").innerHTML += eventLog;
+      
+      //Add to total log
+      eventLog = document.getElementById("eventLog").innerHTML
       
       document.getElementById("pOE").innerHTML = piecesOfEight;
       
