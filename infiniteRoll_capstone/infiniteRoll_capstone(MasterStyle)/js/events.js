@@ -4,8 +4,10 @@ var silverPieces = 0;
 var goldPieces = 0;
 var piecesOfEight = 0;
 var magicItems = 0;
+var monsterParts = 0;
 
 var playerDamageBoostMystical = 0;
+var playerToHitBoost = 0;
 
 var eventLog = "";
 
@@ -14,6 +16,7 @@ document.getElementById("silver").innerHTML = silverPieces;
 document.getElementById("gold").innerHTML = goldPieces;
 document.getElementById("magicItems").innerHTML = magicItems;
 document.getElementById("pOE").innerHTML = piecesOfEight;
+document.getElementById("monsterParts").innerHTML = monsterParts;
 
 function generateEvent() {
   //Changed to math.floor for uniform distribution
@@ -119,13 +122,22 @@ function generateEvent() {
       shopBtn1.textContent = "Heal Character for: " + itemPrice1 + " gold";
       shopBtn2.textContent = "Sharpen Weapon for: " + itemPrice2 + " gold";
       shopBtn3.textContent = "Magic Item for: " + itemPrice3 + " gold";
+      
       sellBtn.textContent = "Sell monster part for: " + sellPrice + " gold";
 
       //Add event listeners for buttons
-      //!!!!!! TODO !!!!!!
-      //
-      //
-      //
+      shopBtn1.addEventListener("click", function(){
+        
+      });
+      shopBtn2.addEventListener("click", function(){
+        
+      });
+      shopBtn3.addEventListener("click", function(){
+        
+      });
+      sellBtn.addEventListener("click", function(){
+        
+      });
 
       document.getElementById("detailRow").appendChild(shopBtn1);
       document.getElementById("detailRow").appendChild(shopBtn2);
@@ -177,7 +189,6 @@ function generateEvent() {
         playerDamageBoostMystical += 5;
         
       }
-      
       
       document.getElementById("pOE").innerHTML = piecesOfEight;
       
