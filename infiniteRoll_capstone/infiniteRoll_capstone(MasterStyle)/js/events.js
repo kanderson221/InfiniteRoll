@@ -3,12 +3,17 @@ var copperPieces = 0;
 var silverPieces = 0;
 var goldPieces = 0;
 var piecesOfEight = 0;
+var magicItems = 0;
 
 var playerDamageBoostMystical = 0;
+
+var eventLog = "";
 
 document.getElementById("copper").innerHTML = copperPieces;
 document.getElementById("silver").innerHTML = silverPieces;
 document.getElementById("gold").innerHTML = goldPieces;
+document.getElementById("magicItems").innerHTML = magicItems;
+document.getElementById("pOE").innerHTML = piecesOfEight;
 
 function generateEvent() {
   //Changed to math.floor for uniform distribution
@@ -40,6 +45,9 @@ function generateEvent() {
       document.getElementById("copper").innerHTML = copperPieces;
       document.getElementById("silver").innerHTML = silverPieces;
       document.getElementById("gold").innerHTML = goldPieces;
+      
+      eventLog += 
+      
       break;
 
     case 2: ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -145,9 +153,15 @@ function generateEvent() {
         
       } else {
         //Give player magic Item
-        
+        magicItems += 1;
+        playerDamageBoostMystical += 1;
         
       }
+      
+      document.getElementById("copper").innerHTML = copperPieces;
+      document.getElementById("silver").innerHTML = silverPieces;
+      document.getElementById("gold").innerHTML = goldPieces;
+      document.getElementById("magicItems").innerHTML = magicItems;
       
       break;
 
@@ -163,6 +177,9 @@ function generateEvent() {
         playerDamageBoostMystical += 5;
         
       }
+      
+      
+      document.getElementById("pOE").innerHTML = piecesOfEight;
       
       break;
 
@@ -342,6 +359,12 @@ function generateEvent() {
       document.getElementById("eventLog").innerHTML = "Steve has determined you are now worth his time. May he have mercy on your soul...";
 
       //Insert the Steve picture into the enemy slot
+      
+      
+      //Load stats
+      
+      
+      //Commence combat
 
 
       break;
