@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  
 <head>
   <title>
     Infinite Roll: Game
   </title>
   <meta charset="utf-8">
-  <link href="css/styles.css" rel="stylesheet">
   <link href="css/gamePage_styles.css" rel="stylesheet">
   <link href="css/rwd.css" rel="stylesheet">
 </head>
-
 <body>
   <h1 id="title">
     Infinite Roll
@@ -20,14 +17,47 @@
                 col-sm-9
                 col-md-9
                 col-lg-9">
+      <div class="row">
+        <div class="col-xs-4
+                    col-sm-4
+                    col-md-4
+                    col-lg-4">
+          <p>Name: <span id="name"></span></p>
+          <p >Race: <span id="race"></span></p>
+          <p>Class: <span id="class"></span></p>
+          <p>Hit Points: <span id="hp"></span></p>
+        </div>
+        <div class="col-xs-4
+                    col-sm-4
+                    col-md-4
+                    col-lg-4">
+        </div>
+        <div class="col-xs-4
+                    col-sm-4
+                    col-md-4
+                    col-lg-4">
+          <p class="stat" id="strength">Strength: <span></span></p>
+          <p class="stat" id="dexterity">Dexterity: <span></span></p>
+          <p class="stat" id="constitution">Constitution: <span></span></p>
+          <p class="stat" id="intelligence">Intelligence: <span></span></p>
+          <p class="stat" id="wisdom">Wisdom: <span></span></p>
+          <p class="stat" id="charisma">Charisma: <span></span></p>
+        </div>
+      </div>
+      <br>
+      <div id="detailRow">
+        
+      </div>
+      <button id="rollButton" onclick="generateEvent()">
+        Roll
+      </button>
+      <br>
       <div id="enemyArea" class="row">
         <div class="col-xs-4
                     col-sm-4
                     col-md-4
                     col-lg-4">
           <p>Name: Chester <span id="enemyName"></span></p>
-          <p>Race: Mimic</p>
-          <p>Class: Merchant</p>
           <p>Hit Points: <span id="enemyHp"></span></p>
         </div>
         <div class="col-xs-4
@@ -48,42 +78,6 @@
           <p class="stat">Charisma: <span id="enemyChr"></span></p>
         </div>
       </div>
-      <br>
-      <br>
-      <div id="detailRow">
-        <!-- I thought we could maybe put other important text in a space around here, like when Chester asks if you want to buy anything or stuff like that. Sort of like a before it goes into the event log. But maybe not, I just decided to map it out just incase. -->
-      </div>
-      <h1>-Jevin</h1>
-      <br>
-      <br>
-      <div class="row">
-        <div class="col-xs-4
-                    col-sm-4
-                    col-md-4
-                    col-lg-4">
-          <p>Name: <span id="name">Kyle</span></p>
-          <p >Race: <span id="race">Kyle</span></p>
-          <p>Class: <span id="class">Kyle</span></p>
-          <p>Hit Points: <span id="hp">5953</span></p>
-        </div>
-        <div class="col-xs-4
-                    col-sm-4
-                    col-md-4
-                    col-lg-4">
-          <img id="playerImage" src="images/square.png">
-        </div>
-        <div class="col-xs-4
-                    col-sm-4
-                    col-md-4
-                    col-lg-4">
-          <p class="stat" id="strength">Strength: </p>
-          <p class="stat" id="dexterity">Dexterity: </p>
-          <p class="stat" id="constitution">Constitution: </p>
-          <p class="stat" id="intelligence">Intelligence: </p>
-          <p class="stat" id="wisdom">Wisdom: </p>
-          <p class="stat" id="charisma">Charisma: </p>
-        </div>
-      </div>
     </div>
     <div class="col-xs-3
                 col-sm-3
@@ -93,39 +87,29 @@
       <p id="eventLog"></p>
     </div>
   </div>
-  <button id="rollButton" onclick="generateEvent()">
-    Roll
-  </button>
   <br>
   <div id="inventory" class="row">
     <h2>Inventory</h2>
-    <p class="col-xs-2
-              col-sm-2
-              col-md-2
-              col-lg-2">Copper: <span id="copper"></span></p>
-    <p class="col-xs-2
-              col-sm-2
-              col-md-2
-              col-lg-2">Silver: <span id="silver"></span></p>
-    <p class="col-xs-2
-              col-sm-2
-              col-md-2
-              col-lg-2">Gold: <span id="gold"></span></p>
-    <p class="col-xs-2
-              col-sm-2
-              col-md-2
-              col-lg-2">Magic Items: <span id="magicItems"></span></p>
-    <p class="col-xs-2
-              col-sm-2
-              col-md-2
-              col-lg-2">Pieces of Eight: <span id="pOE"></span></p>
-    <p class="col-xs-2
-              col-sm-2
-              col-md-2
-              col-lg-2">Monster Parts: <span id="monsterParts"></span></p>
+    <div class="row">
+      <p class="col-xs-3
+                col-sm-3
+                col-md-3
+                col-lg-3">Gold: <span id="gold"></span></p>
+      <p class="col-xs-3
+                col-sm-3
+                col-md-3
+                col-lg-3">Magic Items: <span id="magicItems"></span></p>
+      <p class="col-xs-3
+                col-sm-3
+                col-md-3
+                col-lg-3">Pieces of Eight: <span id="pOE"></span></p>
+      <p class="col-xs-3
+                col-sm-3
+                col-md-3
+                col-lg-3">Monster Parts: <span id="monsterParts"></span></p>
+    </div>
   </div>
   <script src="js/character.js"></script>
   <script src="js/events.js"></script>
 </body>
-  
 </html>
