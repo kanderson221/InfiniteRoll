@@ -45,12 +45,12 @@ if (race === "Dwarf" || race === "dwarf") {
 	humanBonus = 1;
 }
 
-var strength = Math.floor(Math.random() * Math.floor(3, 6)) + 1 + dwarfBonus;
-var dexterity = Math.floor(Math.random() * Math.floor(3, 6)) + 1 + humanBonus;
-var constitution = Math.floor(Math.random() * Math.floor(3, 6)) + 1;
-var intelligence = Math.floor(Math.random() * Math.floor(3, 6)) + 1;
-var wisdom = Math.floor(Math.random() * Math.floor(3, 6)) + 1 + elfBonus;
-var charisma = Math.floor(Math.random() * Math.floor(3, 6)) + 1;
+var strength = Math.floor(Math.random() * 3) + 3 + dwarfBonus;
+var dexterity = Math.floor(Math.random() * 3) + 3 + humanBonus;
+var constitution = Math.floor(Math.random() * 3) + 3;
+var intelligence = Math.floor(Math.random() * 3) + 3;
+var wisdom = Math.floor(Math.random() * 3) + 3 + elfBonus;
+var charisma = Math.floor(Math.random() * 3) + 3;
 
 document.getElementById("strength").textContent = strength;
 document.getElementById("dexterity").textContent = dexterity;
@@ -80,7 +80,7 @@ if (className === "Wizard" || className === "wizard") {
 	
 } 
 
-
+document.getElementById("class").textContent = className;
 document.getElementById("hp").textContent = hpTotal;
 
 
