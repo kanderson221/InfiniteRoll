@@ -314,167 +314,167 @@ function generateEvent() {
       break;
 
     case 10: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "H";
+      document.getElementById("eventLog").innerHTML = "H<br><br>" + eventLog;
       break;
 
     case 11: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "I";
+      document.getElementById("eventLog").innerHTML = "I<br><br>" + eventLog;
       break;
 
     case 12: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "J";
+      document.getElementById("eventLog").innerHTML = "J<br><br>" + eventLog;
       break;
 
     case 13: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "K";
+      document.getElementById("eventLog").innerHTML = "K<br><br>" + eventLog;
       break;
 
     case 14: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "L";
+      document.getElementById("eventLog").innerHTML = "L<br><br>" + eventLog;
       break;
 
     case 15: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "M";
+      document.getElementById("eventLog").innerHTML = "M<br><br>" + eventLog;
       break;
 
     case 16: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "N";
+      document.getElementById("eventLog").innerHTML = "N<br><br>" + eventLog;
       break;
 
     case 17: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "O";
+      document.getElementById("eventLog").innerHTML = "O<br><br>" + eventLog;
       break;
 
     case 18: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "P";
+      document.getElementById("eventLog").innerHTML = "P<br><br>" + eventLog;
       break;
 
     case 19: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "Q";
+      document.getElementById("eventLog").innerHTML = "Q<br><br>" + eventLog;
       break;
 
     case 20: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "R";
+      document.getElementById("eventLog").innerHTML = "R<br><br>" + eventLog;
       break;
 
     case 21: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "S";
+      document.getElementById("eventLog").innerHTML = "S<br><br>" + eventLog;
       break;
 
     case 22: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "T";
+      document.getElementById("eventLog").innerHTML = "T<br><br>" + eventLog;
       break;
 
     case 23: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "U";
+      document.getElementById("eventLog").innerHTML = "U<br><br>" + eventLog;
       break;
 
     case 24: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "V";
+      document.getElementById("eventLog").innerHTML = "V<br><br>" + eventLog;
       break;
 
     case 25: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "W";
+      document.getElementById("eventLog").innerHTML = "W<br><br>" + eventLog;
       break;
 
     case 26: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "X";
+      document.getElementById("eventLog").innerHTML = "X<br><br>" + eventLog;
       break;
 
     case 27: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "Y";
+      document.getElementById("eventLog").innerHTML = "Y<br><br>" + eventLog;
       break;
 
     case 28: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "Z";
+      document.getElementById("eventLog").innerHTML = "Z<br><br>" + eventLog;
       break;
 
     case 29: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "B";
+      document.getElementById("eventLog").innerHTML = "B<br><br>" + eventLog;
       break;
 
     case 30: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "C";
+      document.getElementById("eventLog").innerHTML = "C<br><br>" + eventLog;
       break;
 
     case 31: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "D";
+      document.getElementById("eventLog").innerHTML = "D<br><br>" + eventLog;
       break;
 
     case 32: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "E";
+      document.getElementById("eventLog").innerHTML = "E<br><br>" + eventLog;
       break;
 
     case 33: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "F";
+      document.getElementById("eventLog").innerHTML = "F<br><br>" + eventLog;
       break;
 
     case 34: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "G";
+      document.getElementById("eventLog").innerHTML = "G<br><br>" + eventLog;
       break;
 
     case 35: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "H";
+      document.getElementById("eventLog").innerHTML = "H<br><br>" + eventLog;
       break;
 
     case 36: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "I";
+      document.getElementById("eventLog").innerHTML = "I<br><br>" + eventLog;
       break;
 
     case 37: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "J";
+      document.getElementById("eventLog").innerHTML = "J<br><br>" + eventLog;
       break;
 
     case 38: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "K";
+      document.getElementById("eventLog").innerHTML = "K<br><br>" + eventLog;
       break;
 
     case 39: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "L";
+      document.getElementById("eventLog").innerHTML = "L<br><br>" + eventLog;
       break;
 
     case 40: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "M";
+      document.getElementById("eventLog").innerHTML = "M<br><br>" + eventLog;
       break;
 
     case 41: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "N";
+      document.getElementById("eventLog").innerHTML = "N<br><br>" + eventLog;
       break;
 
     case 42: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "O";
+      document.getElementById("eventLog").innerHTML = "O<br><br>" + eventLog;
       break;
 
     case 43: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "P";
+      document.getElementById("eventLog").innerHTML = "P<br><br>" + eventLog;
       break;
 
     case 44: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "Q";
+      document.getElementById("eventLog").innerHTML = "Q<br><br>" + eventLog;
       break;
 
     case 45: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "R";
+      document.getElementById("eventLog").innerHTML = "R<br><br>" + eventLog;
       break;
 
     case 46: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "S";
+      document.getElementById("eventLog").innerHTML = "S<br><br>" + eventLog;
       break;
 
     case 47: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "T";
+      document.getElementById("eventLog").innerHTML = "T<br><br>" + eventLog;
       break;
 
     case 48: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "U";
+      document.getElementById("eventLog").innerHTML = "U<br><br>" + eventLog;
       break;
 
     case 49: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "V";
+      document.getElementById("eventLog").innerHTML = "V<br><br>" + eventLog;
       break;
 
     case 50: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "Steve has determined you are now worth his time. May he have mercy on your soul...";
+      document.getElementById("eventLog").innerHTML = "Steve has determined you are now worth his time. May he have mercy on your soul...<br><br>" + eventLog;
 
       //Insert the Steve picture into the enemy slot
       
@@ -489,7 +489,7 @@ function generateEvent() {
 
     //This should not trigger, but we have it just in case
     default:
-      document.getElementById("eventLog").innerHTML = "You find one Gold piece";
+      document.getElementById("eventLog").innerHTML = "You find one Gold piece<br><br>" + eventLog;
       
       goldPieces += 1;
       
