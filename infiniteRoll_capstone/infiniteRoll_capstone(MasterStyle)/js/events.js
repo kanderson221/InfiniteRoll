@@ -241,17 +241,71 @@ function generateEvent() {
 
     case 7: /////////////////////////////////////////////////////////////////////////////////////////////////
 			// Kyle
-      document.getElementById("eventLog").innerHTML = "E";
+      document.getElementById("eventLog").innerHTML = "You have come across what seems to be a walking tree!";
+			
+			//Insert the picture into the enemy slot
+      
+      
+      //Load stats
+      document.getElementById("enemyName").innerHTML += "Ent";
+			document.getElementById("enemyHp").innerHTML += "200";
+			document.getElementById("enemyStr").innerHTML += "15";
+			document.getElementById("enemyDex").innerHTML += "10";
+			document.getElementById("enemyCon").innerHTML += "3";
+			document.getElementById("enemyInt").innerHTML += "11";
+			document.getElementById("enemyWis").innerHTML += "9";
+			document.getElementById("enemyChr").innerHTML += "6";
+			
+      
+      //Commence combat
+
+			
+			
+			
       break;
 
     case 8: /////////////////////////////////////////////////////////////////////////////////////////////////
 			// Kyle
-      document.getElementById("eventLog").innerHTML = "F";
+      document.getElementById("eventLog").innerHTML = "You have come across a road bandit!";
+			
+			//Insert the picture into the enemy slot
+      
+      
+      //Load stats
+      document.getElementById("enemyName").innerHTML += "Bandit";
+			document.getElementById("enemyHp").innerHTML += "50";
+			document.getElementById("enemyStr").innerHTML += "10";
+			document.getElementById("enemyDex").innerHTML += "13";
+			document.getElementById("enemyCon").innerHTML += "16";
+			document.getElementById("enemyInt").innerHTML += "9";
+			document.getElementById("enemyWis").innerHTML += "8";
+			document.getElementById("enemyChr").innerHTML += "10";
+			
+      
+      //Commence combat
+			
       break;
 
     case 9: /////////////////////////////////////////////////////////////////////////////////////////////////
 			// Kyle
-      document.getElementById("eventLog").innerHTML = "G";
+      document.getElementById("eventLog").innerHTML = "You have come across a ice fox!";
+			
+			//Insert the picture into the enemy slot
+      
+      
+      //Load stats
+      document.getElementById("enemyName").innerHTML += "Ice Fox";
+			document.getElementById("enemyHp").innerHTML += "40";
+			document.getElementById("enemyStr").innerHTML += "12";
+			document.getElementById("enemyDex").innerHTML += "15";
+			document.getElementById("enemyCon").innerHTML += "10";
+			document.getElementById("enemyInt").innerHTML += "9";
+			document.getElementById("enemyWis").innerHTML += "6";
+			document.getElementById("enemyChr").innerHTML += "9";
+			
+      
+      //Commence combat
+			
       break;
 
     case 10: /////////////////////////////////////////////////////////////////////////////////////////////////
