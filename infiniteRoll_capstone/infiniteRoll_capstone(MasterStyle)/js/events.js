@@ -32,7 +32,7 @@ function generateEvent() {
 
   switch (eventID) {
     case 1: //////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "Player finds two gold pieces<br>\n" + lineBreak + eventLog;
+      document.getElementById("eventLog").innerHTML = "You find two gold pieces<br><br>" + eventLog;
 
       goldPieces += 2;
       
@@ -46,11 +46,11 @@ function generateEvent() {
     case 2: ///////////////////////////////////////////////////////////////////////////////////////////////////
       //Prevent losing money when broke
       if (goldPieces == 0) {
-        document.getElementById("eventLog").innerHTML = "Player has a nice walk with their empty coinpurse<br>\n" + lineBreak + eventLog;
+        document.getElementById("eventLog").innerHTML = "You have a nice walk with your empty coinpurse<br><br>" + eventLog;
       }
       //Else the character can lose their money MWAHAHA
       else {
-        document.getElementById("eventLog").innerHTML = "Player loses one gold piece<br>\n" + lineBreak + eventLog;
+        document.getElementById("eventLog").innerHTML = "You lose one gold piece<br><br>" + eventLog;
         
         goldPieces -= 1;
       }
@@ -64,7 +64,7 @@ function generateEvent() {
     case 3: //////////////////////////////////////////////////////////////////////////////////////
       var randomNumber = Math.floor(Math.random() * (250 + 1));
 
-      document.getElementById("eventLog").innerHTML = "Player finds a large sack containing " + randomNumber + " gold pieces. What luck!<br>\n" + lineBreak + eventLog;
+      document.getElementById("eventLog").innerHTML = "You find a large sack containing " + randomNumber + " gold pieces. What luck!<br><br>" + eventLog;
 
       goldPieces += randomNumber;
       
@@ -75,7 +75,7 @@ function generateEvent() {
       break;
 
     case 4: ////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "You encounter a merchant: Chester the Frugile<br>\n" + lineBreak + eventLog;
+      document.getElementById("eventLog").innerHTML = "You encounter a merchant: Chester the Frugile<br><br>" + eventLog;
 
       //Insert Chester's picture in the picture slot
       document.getElementById("enemyImage").attributes.src = "images/chester.jpg";
@@ -105,6 +105,8 @@ function generateEvent() {
       eventLog = document.getElementById("eventLog").innerHTML
 
       //Add event listeners for buttons
+      
+      //Heal Button
       shopBtn1.addEventListener("click", function(){
         if (playerCurrentHealth < playerMaxHealth) {
           if (goldPieces >= itemPrice1) {
@@ -115,7 +117,7 @@ function generateEvent() {
               playerCurrentHealth = playerMaxHealth;
             }
             
-            document.getElementById("eventLog").innerHTML = "You healed yourself at Chester's shop.<br>\n" + lineBreak + eventLog;
+            document.getElementById("eventLog").innerHTML = "You healed yourself at Chester's shop.<br><br>" + eventLog;
             
             //Add to total log
             eventLog = document.getElementById("eventLog").innerHTML
@@ -126,12 +128,13 @@ function generateEvent() {
         }
       });
       
+      //Sharpen Button
       shopBtn2.addEventListener("click", function(){
         if (goldPieces >= itemPrice2) {
           playerToHitBoost += 1;
           goldPieces -= itemPrice2;
           
-          document.getElementById("eventLog").innerHTML = "You sharpened your sword. It should be easier to hit monsters now.<br>\n" + lineBreak + eventLog;
+          document.getElementById("eventLog").innerHTML = "You sharpened your sword. It should be easier to hit monsters now.<br><br>" + eventLog;
           
           //Add to total log
           eventLog = document.getElementById("eventLog").innerHTML
@@ -140,13 +143,14 @@ function generateEvent() {
         }
       });
       
+      //Magic Item Button
       shopBtn3.addEventListener("click", function(){
         if (goldPieces >= itemPrice3) {
           magicItems += 1;
           playerDamageBoostMystical += 1;
           goldPieces -= itemPrice3;
             
-          document.getElementById("eventLog").innerHTML = "You bought a magic item. You feel stronger now.<br>\n" + lineBreak + eventLog;
+          document.getElementById("eventLog").innerHTML = "You bought a magic item. You feel stronger now.<br><br>" + eventLog;
           
           //Add to total log
           eventLog = document.getElementById("eventLog").innerHTML
@@ -156,12 +160,13 @@ function generateEvent() {
         }
       });
       
+      //Sell Button
       sellBtn.addEventListener("click", function(){
         if (monsterParts > 0) {
           monsterParts -= 1;
           goldPieces += sellPrice;
           
-          document.getElementById("eventLog").innerHTML = "You sold a monster part for gold.<br>\n" + lineBreak + eventLog;
+          document.getElementById("eventLog").innerHTML = "You sold a monster part for gold.<br><br>" + eventLog;
           
           //Add to total log
           eventLog = document.getElementById("eventLog").innerHTML
@@ -180,7 +185,7 @@ function generateEvent() {
       break;
 
     case 5: //////////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "You encounter a merchant: Chester the Generous<br>\n" + lineBreak;
+      document.getElementById("eventLog").innerHTML = "You encounter a merchant: Chester the Generous<br><br>";
       
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
@@ -196,14 +201,14 @@ function generateEvent() {
         //Give player gold
         randGold = Math.floor(Math.random() * (200 - 50 + 1) + 50);
         goldPieces += randGold;
-        document.getElementById("eventLog").innerHTML += "Chester the Generous gives you " + randGold + " gold pieces for your bravery.<br>\n" + lineBreak;
+        document.getElementById("eventLog").innerHTML += "Chester the Generous gives you " + randGold + " gold pieces for your bravery.<br><br>";
         
       } else {
         //Give player magic Item
         magicItems += 1;
         playerDamageBoostMystical += 1;
         
-        document.getElementById("eventLog").innerHTML += "Chester the Generous gives you a magical item for your bravery.<br>\n" + lineBreak;
+        document.getElementById("eventLog").innerHTML += "Chester the Generous gives you a magical item for your bravery.<br><br>";
         
       }
       
@@ -218,12 +223,12 @@ function generateEvent() {
       break;
 
     case 6: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "You find a Piece Of Eight<br>\n" + lineBreak;
+      document.getElementById("eventLog").innerHTML = "You find a Piece Of Eight<br><br>";
       
       piecesOfEight += 1;
       
       if (piecesOfEight >= 8) {
-        document.getElementById("eventLog").innerHTML += "You have found all eight pieces! They crumble in your hands, and you feel stronger somehow...<br>\n" + lineBreak;
+        document.getElementById("eventLog").innerHTML += "You have found all eight pieces! They crumble in your hands, and you feel stronger somehow...<br><br>";
         
         piecesOfEight -= 8;
         playerDamageBoostMystical += 5;
@@ -241,20 +246,20 @@ function generateEvent() {
 
     case 7: /////////////////////////////////////////////////////////////////////////////////////////////////
 			// Kyle
-      document.getElementById("eventLog").innerHTML = "You have come across what seems to be a walking tree!";
+      document.getElementById("eventLog").innerHTML = "You have come across what seems to be a walking tree!<br><br>";
 			
-			//Insert the picture into the enemy slot
+      //Insert the picture into the enemy slot
       
       
       //Load stats
-      document.getElementById("enemyName").innerHTML += "Ent";
-			document.getElementById("enemyHp").innerHTML += "200";
-			document.getElementById("enemyStr").innerHTML += "15";
-			document.getElementById("enemyDex").innerHTML += "10";
-			document.getElementById("enemyCon").innerHTML += "3";
-			document.getElementById("enemyInt").innerHTML += "11";
-			document.getElementById("enemyWis").innerHTML += "9";
-			document.getElementById("enemyChr").innerHTML += "6";
+      document.getElementById("enemyName").innerHTML = "Ent";
+      document.getElementById("enemyHp").innerHTML = "200";
+      document.getElementById("enemyStr").innerHTML = "15";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "3";
+      document.getElementById("enemyInt").innerHTML = "11";
+      document.getElementById("enemyWis").innerHTML = "9";
+      document.getElementById("enemyChr").innerHTML = "6";
 			
       
       //Commence combat
@@ -266,20 +271,20 @@ function generateEvent() {
 
     case 8: /////////////////////////////////////////////////////////////////////////////////////////////////
 			// Kyle
-      document.getElementById("eventLog").innerHTML = "You have come across a road bandit!";
+      document.getElementById("eventLog").innerHTML = "You have come across a highway bandit!<br><br>";
 			
-			//Insert the picture into the enemy slot
+      //Insert the picture into the enemy slot
       
       
       //Load stats
-      document.getElementById("enemyName").innerHTML += "Bandit";
-			document.getElementById("enemyHp").innerHTML += "50";
-			document.getElementById("enemyStr").innerHTML += "10";
-			document.getElementById("enemyDex").innerHTML += "13";
-			document.getElementById("enemyCon").innerHTML += "16";
-			document.getElementById("enemyInt").innerHTML += "9";
-			document.getElementById("enemyWis").innerHTML += "8";
-			document.getElementById("enemyChr").innerHTML += "10";
+      document.getElementById("enemyName").innerHTML = "Bandit";
+      document.getElementById("enemyHp").innerHTML = "50";
+      document.getElementById("enemyStr").innerHTML = "10";
+      document.getElementById("enemyDex").innerHTML = "13";
+      document.getElementById("enemyCon").innerHTML = "16";
+      document.getElementById("enemyInt").innerHTML = "9";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "10";
 			
       
       //Commence combat
@@ -288,20 +293,20 @@ function generateEvent() {
 
     case 9: /////////////////////////////////////////////////////////////////////////////////////////////////
 			// Kyle
-      document.getElementById("eventLog").innerHTML = "You have come across a ice fox!";
+      document.getElementById("eventLog").innerHTML = "You have come across a ice fox!<br><br>";
 			
-			//Insert the picture into the enemy slot
+      //Insert the picture into the enemy slot
       
       
       //Load stats
-      document.getElementById("enemyName").innerHTML += "Ice Fox";
-			document.getElementById("enemyHp").innerHTML += "40";
-			document.getElementById("enemyStr").innerHTML += "12";
-			document.getElementById("enemyDex").innerHTML += "15";
-			document.getElementById("enemyCon").innerHTML += "10";
-			document.getElementById("enemyInt").innerHTML += "9";
-			document.getElementById("enemyWis").innerHTML += "6";
-			document.getElementById("enemyChr").innerHTML += "9";
+      document.getElementById("enemyName").innerHTML = "Ice Fox";
+      document.getElementById("enemyHp").innerHTML = "40";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "15";
+      document.getElementById("enemyCon").innerHTML = "10";
+      document.getElementById("enemyInt").innerHTML = "9";
+      document.getElementById("enemyWis").innerHTML = "6";
+      document.getElementById("enemyChr").innerHTML = "9";
 			
       
       //Commence combat
@@ -484,18 +489,10 @@ function generateEvent() {
 
     //This should not trigger, but we have it just in case
     default:
-      document.getElementById("eventLog").innerHTML = "Player finds one Copper piece";
-      copperPieces = copperPieces + 1;
-      if (copperPieces >= 10) {
-        silverPieces = silverPieces + 1;
-        copperPieces = copperPieces - 10;
-      }
-      if (silverPieces >= 10) {
-        goldPieces = goldPieces + 1;
-        silverPieces = silverPieces - 10;
-      }
-      document.getElementById("copper").innerHTML = copperPieces;
-      document.getElementById("silver").innerHTML = silverPieces;
+      document.getElementById("eventLog").innerHTML = "You find one Gold piece";
+      
+      goldPieces += 1;
+      
       document.getElementById("gold").innerHTML = goldPieces;
   }
 };

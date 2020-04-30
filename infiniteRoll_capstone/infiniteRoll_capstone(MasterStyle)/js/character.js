@@ -45,6 +45,8 @@ if (race === "Dwarf" || race === "dwarf") {
 	humanBonus = 1;
 }
 
+//Math.floor(Math.random() * (Max - Min + 1) + Min)
+//Add three of the above together, then add the bonus
 var strength = Math.floor(Math.random() * 3) + 3 + dwarfBonus;
 var dexterity = Math.floor(Math.random() * 3) + 3 + humanBonus;
 var constitution = Math.floor(Math.random() * 3) + 3;
