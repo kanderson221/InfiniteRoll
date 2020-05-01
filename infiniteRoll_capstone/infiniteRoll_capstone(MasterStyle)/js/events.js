@@ -1,18 +1,19 @@
 var eventID = 0;
-var copperPieces = 0;
-var silverPieces = 0;
-var goldPieces = 0;
+var goldPieces = document.getElementById("gold").innerHTML;
 var piecesOfEight = 0;
-var magicItems = 0;
+var magicItems = document.getElementById("magicItems").innerHTML;
 var monsterParts = 0;
 
-var playerDamageBoostMystical = 0;
-var playerToHitBoost = 0;
+if (magicItems != 0) {
+  var playerplayerDamageBoostMystical = magicItems;
+} else {
+  var playerDamageBoostMystical = 0;
+}
 
 var playerMaxHealth = document.getElementById("hp").innerHTML;
 var playerCurrentHealth = playerMaxHealth;
 
-var eventLog = "";
+var eventLog = "You begin your journey through the land";
 
 document.getElementById("gold").innerHTML = goldPieces;
 document.getElementById("magicItems").innerHTML = magicItems;
