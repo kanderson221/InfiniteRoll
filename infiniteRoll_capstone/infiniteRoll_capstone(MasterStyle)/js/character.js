@@ -22,11 +22,11 @@ var className = prompt("What is your character's class? (Wizard, Fighter, Paladi
 
 while (className === "") {
   var className = prompt("Please enter one of these classes: Wizard, Fighter, Paladin")
-}
+  }
 
 while (className != "Wizard" && className != "wizard" && className != "Fighter" && className != "fighter" && className != "Paladin" && className != "paladin") {
   var className = prompt("Please enter one of these classes: Wizard, Fighter, Paladin")
-}
+  }
 
 var rollOne = 0;
 var rollTwo = 0;

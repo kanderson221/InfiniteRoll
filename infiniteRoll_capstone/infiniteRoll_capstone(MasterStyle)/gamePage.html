@@ -1,122 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-  
-<head>
-  <title>
-    Infinite Roll: Game
-  </title>
-  <meta charset="utf-8">
-  <link href="css/styles.css" rel="stylesheet">
-  <link href="css/gamePage_styles.css" rel="stylesheet">
-  <link href="css/rwd.css" rel="stylesheet">
-</head>
 
-<body>
-  <h1 id="title">
-    Infinite Roll
-  </h1>
-  <div id="gameArea" class="row">
-    <div class="col-xs-9
-                col-sm-9
-                col-md-9
-                col-lg-9">
-      <div id="enemyArea" class="row">
-        <div class="col-xs-4
-                    col-sm-4
-                    col-md-4
-                    col-lg-4">
-          <p>Name: <span id="enemyName"></span></p>
-          <p>Race: </p>
-          <p>Class: </p>
-          <p>Hit Points: <span id="enemyHp"></span></p>
+  <head>
+    <title>
+      Infinite Roll: Game
+    </title>
+    <meta charset="utf-8">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/gamePage_styles.css" rel="stylesheet">
+    <link href="css/rwd.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <h1 id="title">
+      Infinite Roll
+    </h1>
+    <div id="gameArea" class="row">
+      <div class="col-xs-9
+                  col-sm-9
+                  col-md-9
+                  col-lg-9">
+        <div id="enemyArea" class="row">
+          <div class="col-xs-4
+                      col-sm-4
+                      col-md-4
+                      col-lg-4">
+            <p>Name: <span id="enemyName"></span></p>
+            <p>Race: </p>
+            <p>Class: </p>
+            <p>Hit Points: <span id="enemyHp"></span></p>
+          </div>
+          <div class="col-xs-4
+                      col-sm-4
+                      col-md-4
+                      col-lg-4">
+            <img id="enemyImage" src="images/circle.png">
+          </div>
+          <div class="col-xs-4
+                      col-sm-4
+                      col-md-4
+                      col-lg-4">
+            <p class="stat">Strength: <span id="enemyStr"></span></p>
+            <p class="stat">Dexterity: <span id="enemyDex"></span></p>
+            <p class="stat">Constitution: <span id="enemyCon"></span></p>
+            <p class="stat">Intelligence: <span id="enemyInt"></span></p>
+            <p class="stat">Wisdom: <span id="enemyWis"></span></p>
+            <p class="stat">Charisma: <span id="enemyChr"></span></p>
+          </div>
         </div>
-        <div class="col-xs-4
-                    col-sm-4
-                    col-md-4
-                    col-lg-4">
-          <img id="enemyImage" src="images/circle.png">
+        <br>
+        <br>
+        <div id="detailRow">
+          <!-- I thought we could maybe put other important text in a space around here, like when Chester asks if you want to buy anything or stuff like that. Sort of like a before it goes into the event log. But maybe not, I just decided to map it out just incase. -->
         </div>
-        <div class="col-xs-4
-                    col-sm-4
-                    col-md-4
-                    col-lg-4">
-          <p class="stat">Strength: <span id="enemyStr"></span></p>
-          <p class="stat">Dexterity: <span id="enemyDex"></span></p>
-          <p class="stat">Constitution: <span id="enemyCon"></span></p>
-          <p class="stat">Intelligence: <span id="enemyInt"></span></p>
-          <p class="stat">Wisdom: <span id="enemyWis"></span></p>
-          <p class="stat">Charisma: <span id="enemyChr"></span></p>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-xs-4
+                      col-sm-4
+                      col-md-4
+                      col-lg-4">
+            <p>Name: <span id="name"></span></p>
+            <p >Race: <span id="race"></span></p>
+            <p>Class: <span id="class"></span></p>
+            <p>Hit Points: <span id="hp"></span></p>
+          </div>
+          <div class="col-xs-4
+                      col-sm-4
+                      col-md-4
+                      col-lg-4">
+            <img id="playerImage" src="images/square.png">
+          </div>
+          <div class="col-xs-4
+                      col-sm-4
+                      col-md-4
+                      col-lg-4">
+            <p class="stat">Strength: <span id="strength"></span></p>
+            <p class="stat">Dexterity: <span id="dexterity"></span></p>
+            <p class="stat">Constitution: <span id="constitution"></span></p>
+            <p class="stat">Intelligence: <span id="intelligence"></span></p>
+            <p class="stat">Wisdom: <span id="wisdom"></span></p>
+            <p class="stat">Charisma:<span id="charisma"></span> </p>
+          </div>
         </div>
       </div>
-      <br>
-      <br>
-      <div id="detailRow">
-        <!-- I thought we could maybe put other important text in a space around here, like when Chester asks if you want to buy anything or stuff like that. Sort of like a before it goes into the event log. But maybe not, I just decided to map it out just incase. -->
-      </div>
-      <br>
-      <br>
-      <div class="row">
-        <div class="col-xs-4
-                    col-sm-4
-                    col-md-4
-                    col-lg-4">
-          <p>Name: <span id="name"></span></p>
-          <p >Race: <span id="race"></span></p>
-          <p>Class: <span id="class"></span></p>
-          <p>Hit Points: <span id="hp"></span></p>
-        </div>
-        <div class="col-xs-4
-                    col-sm-4
-                    col-md-4
-                    col-lg-4">
-          <img id="playerImage" src="images/square.png">
-        </div>
-        <div class="col-xs-4
-                    col-sm-4
-                    col-md-4
-                    col-lg-4">
-          <p class="stat">Strength: <span id="strength"></span></p>
-          <p class="stat">Dexterity: <span id="dexterity"></span></p>
-          <p class="stat">Constitution: <span id="constitution"></span></p>
-          <p class="stat">Intelligence: <span id="intelligence"></span></p>
-          <p class="stat">Wisdom: <span id="wisdom"></span></p>
-          <p class="stat">Charisma:<span id="charisma"></span> </p>
-        </div>
+      <div class="col-xs-3
+                  col-sm-3
+                  col-md-3
+                  col-lg-3">
+        <h2>Event Log</h2>
+        <p id="eventLog"></p>
       </div>
     </div>
-    <div class="col-xs-3
-                col-sm-3
-                col-md-3
-                col-lg-3">
-      <h2>Event Log</h2>
-      <p id="eventLog"></p>
+    <button id="rollButton" onclick="generateEvent()">
+      Roll
+    </button>
+    <br>
+    <div id="inventory" class="row">
+      <h2>Inventory</h2>
+      <p class="col-xs-2
+                col-sm-2
+                col-md-2
+                col-lg-2">Gold: <span id="gold"></span></p>
+      <p class="col-xs-2
+                col-sm-2
+                col-md-2
+                col-lg-2">Magic Items: <span id="magicItems"></span></p>
+      <p class="col-xs-2
+                col-sm-2
+                col-md-2
+                col-lg-2">Pieces of Eight: <span id="pOE"></span></p>
+      <p class="col-xs-2
+                col-sm-2
+                col-md-2
+                col-lg-2">Monster Parts: <span id="monsterParts"></span></p>
     </div>
-  </div>
-  <button id="rollButton" onclick="generateEvent()">
-    Roll
-  </button>
-  <br>
-  <div id="inventory" class="row">
-    <h2>Inventory</h2>
-    <p class="col-xs-2
-              col-sm-2
-              col-md-2
-              col-lg-2">Gold: <span id="gold"></span></p>
-    <p class="col-xs-2
-              col-sm-2
-              col-md-2
-              col-lg-2">Magic Items: <span id="magicItems"></span></p>
-    <p class="col-xs-2
-              col-sm-2
-              col-md-2
-              col-lg-2">Pieces of Eight: <span id="pOE"></span></p>
-    <p class="col-xs-2
-              col-sm-2
-              col-md-2
-              col-lg-2">Monster Parts: <span id="monsterParts"></span></p>
-  </div>
-  <script src="js/character.js"></script>
-  <script src="js/events.js"></script>
-</body>
-  
+    <script src="js/character.js"></script>
+    <script src="js/events.js"></script>
+  </body>
+
 </html>
