@@ -20,6 +20,41 @@
                   col-sm-9
                   col-md-9
                   col-lg-9">
+        <div id ="playerArea" class="row">
+          <div class="col-xs-4
+                      col-sm-4
+                      col-md-4
+                      col-lg-4">
+            <p>Name: <span id="name"></span></p>
+            <p >Race: <span id="race"></span></p>
+            <p>Class: <span id="class"></span></p>
+            <p>Hit Points: <span id="hp"></span></p>
+          </div>
+          <div class="col-xs-4
+                      col-sm-4
+                      col-md-4
+                      col-lg-4">
+            <img id="playerImage" src="images/square.png">
+          </div>
+          <div class="col-xs-4
+                      col-sm-4
+                      col-md-4
+                      col-lg-4">
+            <p class="stat">Strength: <span id="strength"></span></p>
+            <p class="stat">Dexterity: <span id="dexterity"></span></p>
+            <p class="stat">Constitution: <span id="constitution"></span></p>
+            <p class="stat">Intelligence: <span id="intelligence"></span></p>
+            <p class="stat">Wisdom: <span id="wisdom"></span></p>
+            <p class="stat">Charisma:<span id="charisma"></span> </p>
+          </div>
+        </div>
+        <br>
+        <div id="detailRow">
+        </div>
+        <button id="rollButton" onclick="generateEvent()">
+          Roll
+        </button>
+        <br>
         <div id="enemyArea" class="row">
           <div class="col-xs-4
                       col-sm-4
@@ -48,41 +83,6 @@
             <p class="stat">Charisma: <span id="enemyChr"></span></p>
           </div>
         </div>
-        <br>
-        <br>
-        <div id="detailRow">
-          <!-- I thought we could maybe put other important text in a space around here, like when Chester asks if you want to buy anything or stuff like that. Sort of like a before it goes into the event log. But maybe not, I just decided to map it out just incase. -->
-        </div>
-        <br>
-        <br>
-        <div class="row">
-          <div class="col-xs-4
-                      col-sm-4
-                      col-md-4
-                      col-lg-4">
-            <p>Name: <span id="name"></span></p>
-            <p >Race: <span id="race"></span></p>
-            <p>Class: <span id="class"></span></p>
-            <p>Hit Points: <span id="hp"></span></p>
-          </div>
-          <div class="col-xs-4
-                      col-sm-4
-                      col-md-4
-                      col-lg-4">
-            <img id="playerImage" src="images/square.png">
-          </div>
-          <div class="col-xs-4
-                      col-sm-4
-                      col-md-4
-                      col-lg-4">
-            <p class="stat">Strength: <span id="strength"></span></p>
-            <p class="stat">Dexterity: <span id="dexterity"></span></p>
-            <p class="stat">Constitution: <span id="constitution"></span></p>
-            <p class="stat">Intelligence: <span id="intelligence"></span></p>
-            <p class="stat">Wisdom: <span id="wisdom"></span></p>
-            <p class="stat">Charisma:<span id="charisma"></span> </p>
-          </div>
-        </div>
       </div>
       <div class="col-xs-3
                   col-sm-3
@@ -92,9 +92,6 @@
         <p id="eventLog"></p>
       </div>
     </div>
-    <button id="rollButton" onclick="generateEvent()">
-      Roll
-    </button>
     <br>
     <div id="inventory" class="row">
       <h2>Inventory</h2>
