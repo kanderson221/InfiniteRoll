@@ -406,292 +406,738 @@ function generateEvent() {
       break;
 
     case 13: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "K<br><br>" + eventLog;
-      break;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";      
+			
+			break;
 
     case 14: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "L<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 15: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "M<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 16: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "N<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 17: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "O<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 18: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "P<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 19: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "Q<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 20: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "R<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 21: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "S<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 22: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "T<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 23: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "U<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 24: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "V<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 25: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "W<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 26: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "X<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 27: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "Y<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 28: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "Z<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 29: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "B<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 30: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "C<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 31: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "D<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 32: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "E<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 33: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "F<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 34: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "G<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 35: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "H<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 36: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "I<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 37: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "J<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 38: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "K<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 39: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "L<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 40: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "M<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 41: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "N<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 42: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "O<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 43: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "P<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 44: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "Q<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 45: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "R<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 46: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "S<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 47: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "T<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 48: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "U<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";																				
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       break;
 
     case 49: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "V<br><br>" + eventLog;
+			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
+      //Insert the picture into the enemy slot
+
+
+      //Load stats
+      document.getElementById("enemyName").innerHTML = "Goblin";
+      document.getElementById("enemyHp").innerHTML = "12";
+      document.getElementById("enemyStr").innerHTML = "12";
+      document.getElementById("enemyDex").innerHTML = "10";
+      document.getElementById("enemyCon").innerHTML = "12";
+      document.getElementById("enemyInt").innerHTML = "6";
+      document.getElementById("enemyWis").innerHTML = "8";
+      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
