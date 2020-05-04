@@ -7,22 +7,113 @@
   <meta charset="utf-8">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/rwd.css" rel="stylesheet">
+  <style>
+    hr {
+      padding: 0;
+    }
+  </style>
 </head>
 <body>
-  <div id="conatiner">
-    <h3>Abandoned Pet Rock</h3>
-    <p>This poor abandoned pet has suffered for years, grieving and longing over the life that they had with their past ower. 
-    Inside it holds a grudge that has been waiting for years to come out. But be careful, these creatures attack those who remind
-    them of their owners.</p>
-    <br><br>
-    <h3>Count Spatula</h3>
-    <p>A spatula that is also part vampire? well this is bizzare. Count spatula was once a normal spatula that was enchanted to come to life one day, but he had a terrible encounter with a vampire one faithful night. And so he was cursed, or so the story goes...</p>
-    <br><br>
-    <h3>Ice Fox</h3>
-    <p>A fearsome yet beautiful creature to behold. This creature has some strange abilities, too! It enjoys running or talking walks on top of lakes and rivers, but he never falls in. This is because once its foot comes in contact with the surface of the water, the water instantly freezes. Allowing the fox to safely travel across any boy of water.</p>
-    <br><br>
-    <h3>Reflection</h3>
-    <p>A reflection of you, how can this be?! Be careful if you encounter this being, it is said that it can copy your abilities and is and equal match for you. However, this imposter ins't perfect. As it will try to copy you it may fail and becom vulnerable for a short time. Use this time to strike!</p>
+  <div id="loreArea" class="row">
+    <div id="petRock" class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <h1>Abandoned Pet Rock</h1>
+        <img id="enemyImage" src="images/chester.jpg">
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <p>
+          This poor abandoned pet has suffered for years, grieving and longing over the life that they had with their past ower. 
+          Inside it holds a grudge that has been waiting for years to come out. But be careful, these creatures attack those who remind
+          them of their owners.
+        </p>
+      </div>
+    </div>
+    <hr>
+    <div id="countSpatula" class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <h1>Count Spatula</h1>
+        <img id="enemyImage" src="images/chester.jpg">
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <p>
+          A spatula that is also part vampire? well this is bizzare. 
+          Count spatula was once a normal spatula that was enchanted to come to life one day, 
+          but he had a terrible encounter with a vampire one faithful night. And so he was cursed, or so the story goes...
+        </p>
+      </div>
+    </div>
+    <hr>
+    <div id="goblinGrunt" class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <h1>Goblin Grunt</h1>
+        <img id="enemyImage" src="images/goblinEnemy.jpg">
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <p>
+          Gasp! What's that creeping the bushes? Oh, its just a goblin.
+          Goblins are common enemies that serve under the ruthless Goblin King.
+          Not much can be said about goblins other then they like shiny objects and
+          they sometimes need a good kick in the rear
+        </p>
+      </div>
+    </div>
+    <hr>
+    <div id="goblinKing" class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <h1>The Goblin King</h1>
+        <img id="enemyImage" src="images/goblinKing.jpg">
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <p>
+          The ruthless king of all goblins, the Goblin King will stop at nothing to destroy everything in it's path.
+          While the Goblin King is a very dangerous entity, even he fears what lies beyond his kingdom...
+          or possibly even in his kingdom?
+        </p>
+      </div>
+    </div>
+    <hr>
+    <div id="iceFox" class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <h1>Ice Fox</h1>
+        <img id="enemyImage" src="images/chester.jpg">
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <p>
+          A fearsome yet beautiful creature to behold. 
+          This creature has some strange abilities, too! 
+          It enjoys running or talking walks on top of lakes and rivers, but he never falls in. 
+          This is because once its foot comes in contact with the surface of the water, the water instantly freezes. 
+          Allowing the fox to safely travel across any boy of water.
+        </p>
+      </div>
+    </div>
+    <hr>
+    <div id="reflection" class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <h1>Reflection</h1>
+        <img id="enemyImage" src="images/chester.jpg">
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <p>
+          A reflection of you, how can this be?! 
+          Be careful if you encounter this being, it is said that it can copy your abilities and is and equal match for you.
+          However, this imposter ins't perfect. As it will try to copy you it may fail and becom vulnerable for a short time.
+          Use this time to strike!
+        </p>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div id="buttonArea" class="row">
+    <button type="button" id="toHome" class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+      <a href="home.html">Home Page</a>
+    </button>
+    <button type="button" id="playButton" class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+      <a href="gamePage.html">Play Game</a>
+    </button>
+    <button type="button" id="toInstructions" class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+      <a href="instruction.html">Instructions</a>
+    </button>
   </div>
 </body>
 </html>
