@@ -96,7 +96,6 @@ if (className === "Wizard" || className === "wizard") {
   magicItemsAtStart = 1;
   goldAtStart = 20;
 
-
 } else if (className === "Fighter" || className === "fighter") {
   rollOne = Math.floor(Math.random() * (8) + 1);
   rollTwo = Math.floor(Math.random() * (8) + 1);
@@ -120,30 +119,3 @@ document.getElementById("class").innerHTML = className;
 document.getElementById("hp").innerHTML = hpTotal;
 document.getElementById("magicItems").innerHTML = magicItemsAtStart;
 document.getElementById("gold").innerHTML = goldAtStart;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

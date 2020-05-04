@@ -29,7 +29,7 @@ function generateEvent() {
   eventID = Math.floor(Math.random() * (50) + 1);
 
   //alert(eventID);
-  
+
   //Clear the fields
   document.getElementById("enemyName").innerHTML = "";
   document.getElementById("enemyHp").innerHTML = "";
@@ -94,7 +94,7 @@ function generateEvent() {
       //Insert Chester's picture in the picture slot
       document.getElementById("enemyImage").attributes.src = "images/chester.jpg";
       document.getElementById("enemyName").innerHTML = "Chester";
-      
+
       //Create money amounts for shop items
       //Math.floor(Math.random() * (Max - Min + 1) + Min)
       var itemPrice1 = Math.floor(Math.random() * (100 - 50 + 1) + 50);
@@ -394,12 +394,12 @@ function generateEvent() {
       break;
 
     case 12: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "You find a magical item and 250 gold lying on a piece of parchment. When you take the items, you see the paper has a message on it. \"You are still too weak to meet me. Grow stronger and you may earn my appearance.\" -S<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "You find a magical item and 250 gold lying on a piece of parchment. When you take the items, you see the paper has a message on it. \"You are still too weak to meet me. Grow stronger and you may earn my appearance.\"<br>-S<br><br>" + eventLog;
 
       goldPieces += 250;
       magicItems += 1;
       messagesFromSteve += 1;
-      
+
       document.getElementById("gold").innerHTML = goldPieces;
       document.getElementById("magicItems").innerHTML = magicItems;
 
@@ -409,25 +409,25 @@ function generateEvent() {
       break;
 
     case 13: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "You trip over a healing potion. Lucky for you it lands in your mouth and uncorks itself<br><br>" + eventLog;
 
-      //Insert the picture into the enemy slot
+      if (playerCurrentHealth < playerMaxHealth) {
+        playerCurrentHealth += 10;
 
+        if (playerCurrentHealth > playerMaxHealth) {
+          playerCurrentHealth = playerMaxHealth;
+        }
+      }
+      
+      //Add to total log
+      eventLog = document.getElementById("eventLog").innerHTML
 
-      //Load stats
-      document.getElementById("enemyName").innerHTML = "Goblin";
-      document.getElementById("enemyHp").innerHTML = "12";
-      document.getElementById("enemyStr").innerHTML = "12";
-      document.getElementById("enemyDex").innerHTML = "10";
-      document.getElementById("enemyCon").innerHTML = "12";
-      document.getElementById("enemyInt").innerHTML = "6";
-      document.getElementById("enemyWis").innerHTML = "8";
-      document.getElementById("enemyChr").innerHTML = "3";      
-			
-			break;
+      document.getElementById("hp").innerHTML = playerCurrentHealth;
+
+      break;
 
     case 14: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -447,7 +447,7 @@ function generateEvent() {
       break;
 
     case 15: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -467,7 +467,7 @@ function generateEvent() {
       break;
 
     case 16: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -487,7 +487,7 @@ function generateEvent() {
       break;
 
     case 17: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -507,7 +507,7 @@ function generateEvent() {
       break;
 
     case 18: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -527,7 +527,7 @@ function generateEvent() {
       break;
 
     case 19: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -547,7 +547,7 @@ function generateEvent() {
       break;
 
     case 20: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -567,7 +567,7 @@ function generateEvent() {
       break;
 
     case 21: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -587,7 +587,7 @@ function generateEvent() {
       break;
 
     case 22: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -607,7 +607,7 @@ function generateEvent() {
       break;
 
     case 23: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -627,7 +627,7 @@ function generateEvent() {
       break;
 
     case 24: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -647,7 +647,7 @@ function generateEvent() {
       break;
 
     case 25: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -667,7 +667,7 @@ function generateEvent() {
       break;
 
     case 26: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -687,7 +687,7 @@ function generateEvent() {
       break;
 
     case 27: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -707,7 +707,7 @@ function generateEvent() {
       break;
 
     case 28: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -727,7 +727,7 @@ function generateEvent() {
       break;
 
     case 29: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -747,7 +747,7 @@ function generateEvent() {
       break;
 
     case 30: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -767,7 +767,7 @@ function generateEvent() {
       break;
 
     case 31: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -787,7 +787,7 @@ function generateEvent() {
       break;
 
     case 32: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -807,7 +807,7 @@ function generateEvent() {
       break;
 
     case 33: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -827,7 +827,7 @@ function generateEvent() {
       break;
 
     case 34: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -847,7 +847,7 @@ function generateEvent() {
       break;
 
     case 35: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -867,7 +867,7 @@ function generateEvent() {
       break;
 
     case 36: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -887,7 +887,7 @@ function generateEvent() {
       break;
 
     case 37: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -907,7 +907,7 @@ function generateEvent() {
       break;
 
     case 38: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -927,7 +927,7 @@ function generateEvent() {
       break;
 
     case 39: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -947,7 +947,7 @@ function generateEvent() {
       break;
 
     case 40: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -967,7 +967,7 @@ function generateEvent() {
       break;
 
     case 41: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -987,7 +987,7 @@ function generateEvent() {
       break;
 
     case 42: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -1007,7 +1007,7 @@ function generateEvent() {
       break;
 
     case 43: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -1027,7 +1027,7 @@ function generateEvent() {
       break;
 
     case 44: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -1047,7 +1047,7 @@ function generateEvent() {
       break;
 
     case 45: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -1067,7 +1067,7 @@ function generateEvent() {
       break;
 
     case 46: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -1087,7 +1087,7 @@ function generateEvent() {
       break;
 
     case 47: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -1107,7 +1107,7 @@ function generateEvent() {
       break;
 
     case 48: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -1127,7 +1127,7 @@ function generateEvent() {
       break;
 
     case 49: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
 
@@ -1162,7 +1162,7 @@ function generateEvent() {
 
       } else {
 
-        document.getElementById("eventLog").innerHTML = "You see something out of the corner of your eye. When you look, you see a piece of eight laying on a note that says \"You are almost ready to meet me. Keep fighting, my child.\" - S<br><br>";
+        document.getElementById("eventLog").innerHTML = "You see something out of the corner of your eye. When you look, you see a piece of eight laying on a note that says \"You are almost ready to meet me. Keep fighting, my child.\"<br>- S<br><br>";
 
         piecesOfEight += 1;
 
