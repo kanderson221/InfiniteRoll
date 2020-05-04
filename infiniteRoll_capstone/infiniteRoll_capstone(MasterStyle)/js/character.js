@@ -52,17 +52,17 @@ if (race === "Dwarf" || race === "dwarf") {
 //For each die
 //Math.floor(Math.random() * (Max - Min + 1) + Min)
 //Add three of the above together, then add the bonus
-var strength = Math.floor(Math.random() * (6 - 1 + 1) + 1) + Math.floor(Math.random() * (6 - 1 + 1) + 1) + Math.floor(Math.random() * (6 - 1 + 1) + 1) + dwarfBonus;
+var strength = Math.floor(Math.random() * (6) + 1) + Math.floor(Math.random() * (6) + 1) + Math.floor(Math.random() * (6) + 1) + dwarfBonus;
 
-var dexterity = Math.floor(Math.random() * (6 - 1 + 1) + 1) + Math.floor(Math.random() * (6 - 1 + 1) + 1) + Math.floor(Math.random() * (6 - 1 + 1) + 1) + humanBonus;
+var dexterity = Math.floor(Math.random() * (6) + 1) + Math.floor(Math.random() * (6) + 1) + Math.floor(Math.random() * (6) + 1) + humanBonus;
 
-var constitution = Math.floor(Math.random() * (6 - 1 + 1) + 1) + Math.floor(Math.random() * (6 - 1 + 1) + 1) + Math.floor(Math.random() * (6 - 1 + 1) + 1);
+var constitution = Math.floor(Math.random() * (6) + 1) + Math.floor(Math.random() * (6) + 1) + Math.floor(Math.random() * (6) + 1);
 
-var intelligence = Math.floor(Math.random() * (6 - 1 + 1) + 1) + Math.floor(Math.random() * (6 - 1 + 1) + 1) + Math.floor(Math.random() * (6 - 1 + 1) + 1);
+var intelligence = Math.floor(Math.random() * (6) + 1) + Math.floor(Math.random() * (6) + 1) + Math.floor(Math.random() * (6) + 1);
 
-var wisdom = Math.floor(Math.random() * (6 - 1 + 1) + 1) + Math.floor(Math.random() * (6 - 1 + 1) + 1) + Math.floor(Math.random() * (6 - 1 + 1) + 1) + elfBonus;
+var wisdom = Math.floor(Math.random() * (6) + 1) + Math.floor(Math.random() * (6) + 1) + Math.floor(Math.random() * (6) + 1) + elfBonus;
 
-var charisma = Math.floor(Math.random() * (6 - 1 + 1) + 1) + Math.floor(Math.random() * (6 - 1 + 1) + 1) + Math.floor(Math.random() * (6 - 1 + 1) + 1);
+var charisma = Math.floor(Math.random() * (6) + 1) + Math.floor(Math.random() * (6) + 1) + Math.floor(Math.random() * (6) + 1);
 
 if (constitution <= 10) {
   var conHPBoost = 0;
@@ -87,10 +87,10 @@ document.getElementById("name").innerHTML = name;
 document.getElementById("race").innerHTML = race;
 
 if (className === "Wizard" || className === "wizard") {
-  rollOne = Math.floor(Math.random() * (6 - 1 + 1));
-  rollTwo = Math.floor(Math.random() * (6 - 1 + 1));
-  rollThree = Math.floor(Math.random() * (6 - 1 + 1));
-  rollFour = Math.floor(Math.random() * (6 - 1 + 1));
+  rollOne = Math.floor(Math.random() * (6) + 1);
+  rollTwo = Math.floor(Math.random() * (6) + 1);
+  rollThree = Math.floor(Math.random() * (6) + 1);
+  rollFour = Math.floor(Math.random() * (6) + 1);
 
   hpTotal = rollOne + rollTwo + rollThree + rollFour + (conHPBoost * 4);
   magicItemsAtStart = 1;
@@ -98,19 +98,19 @@ if (className === "Wizard" || className === "wizard") {
 
 
 } else if (className === "Fighter" || className === "fighter") {
-  rollOne = Math.floor(Math.random() * (8 - 1 + 1));
-  rollTwo = Math.floor(Math.random() * (8 - 1 + 1));
-  rollThree = Math.floor(Math.random() * (8 - 1 + 1));
-  rollFour = Math.floor(Math.random() * (8 - 1 + 1));
+  rollOne = Math.floor(Math.random() * (8) + 1);
+  rollTwo = Math.floor(Math.random() * (8) + 1);
+  rollThree = Math.floor(Math.random() * (8) + 1);
+  rollFour = Math.floor(Math.random() * (8) + 1);
 
   hpTotal = rollOne + rollTwo + rollThree + rollFour + (conHPBoost * 4);
   goldAtStart = 100;
 
 } else if (className === "Paladin" || className === "paladin") {
-  rollOne = Math.floor(Math.random() * (10 - 1 + 1));
-  rollTwo = Math.floor(Math.random() * (10 - 1 + 1));
-  rollThree = Math.floor(Math.random() * (10 - 1 + 1));
-  rollFour = Math.floor(Math.random() * (10 - 1 + 1));
+  rollOne = Math.floor(Math.random() * (10) + 1);
+  rollTwo = Math.floor(Math.random() * (10) + 1);
+  rollThree = Math.floor(Math.random() * (10) + 1);
+  rollFour = Math.floor(Math.random() * (10) + 1);
 
   hpTotal = rollOne + rollTwo + rollThree + rollFour + (conHPBoost * 4);
   goldAtStart = 50;

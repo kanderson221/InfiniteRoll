@@ -26,12 +26,23 @@ function generateEvent() {
   //Changed to math.floor for uniform distribution
   // the +1 makes the min and max inclusive
   //Math.floor(Math.random() * (Max - Min + 1) + Min)
-  eventID = Math.floor(Math.random() * (50 - 1 + 1));
+  eventID = Math.floor(Math.random() * (50) + 1);
 
   //alert(eventID);
+  
+  //Clear the fields
+  document.getElementById("enemyName").innerHTML = "";
+  document.getElementById("enemyHp").innerHTML = "";
+  document.getElementById("enemyImage").attributes.src = "images/circle.png";
+  document.getElementById("enemyStr").innerHTML = "";
+  document.getElementById("enemyDex").innerHTML = "";
+  document.getElementById("enemyCon").innerHTML = "";
+  document.getElementById("enemyInt").innerHTML = "";
+  document.getElementById("enemyWis").innerHTML = "";
+  document.getElementById("enemyChr").innerHTML = "";
 
   //Clear the detailRow div
-  document.getElementById("detailRow").textContent = "";
+  document.getElementById("detailRow").innerHTML = "";
 
   switch (eventID) {
     case 1: //////////////////////////////////////////////////////////////////////////////////////////////
@@ -65,7 +76,7 @@ function generateEvent() {
       break;
 
     case 3: //////////////////////////////////////////////////////////////////////////////////////
-      var randomNumber = Math.floor(Math.random() * (250 + 1));
+      var randomNumber = Math.floor(Math.random() * (250) + 1);
 
       document.getElementById("eventLog").innerHTML = "You find a large sack containing " + randomNumber + " gold pieces. What luck!<br><br>" + eventLog;
 
@@ -82,7 +93,8 @@ function generateEvent() {
 
       //Insert Chester's picture in the picture slot
       document.getElementById("enemyImage").attributes.src = "images/chester.jpg";
-
+      document.getElementById("enemyName").innerHTML = "Chester";
+      
       //Create money amounts for shop items
       //Math.floor(Math.random() * (Max - Min + 1) + Min)
       var itemPrice1 = Math.floor(Math.random() * (100 - 50 + 1) + 50);
@@ -195,6 +207,7 @@ function generateEvent() {
 
       //Insert Chester's picture in the picture slot
       document.getElementById("enemyImage").attributes.src = "images/chester.jpg";
+      document.getElementById("enemyName").innerHTML = "Chester";
 
       //Chester will give the player either gold or a magic item
       var randNum = Math.floor(Math.random() * (10 - 1 + 1) + 1);
