@@ -1,5 +1,5 @@
 var eventID = 0;
-var goldPieces = document.getElementById("gold").innerHTML;
+var goldPieces = parseInt(document.getElementById("gold").innerHTML);
 var piecesOfEight = 0;
 var magicItems = document.getElementById("magicItems").innerHTML;
 var monsterParts = 0;
@@ -394,11 +394,14 @@ function generateEvent() {
       break;
 
     case 12: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "You find a magical item and 250 gold lying on a piece of parchment. When you take the items, you see the paper has a message on it. \"You are still too weak to meet me. Grow stronger and you may earn my appearance.\" -Steve<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "You find a magical item and 250 gold lying on a piece of parchment. When you take the items, you see the paper has a message on it. \"You are still too weak to meet me. Grow stronger and you may earn my appearance.\" -S<br><br>" + eventLog;
 
       goldPieces += 250;
       magicItems += 1;
       messagesFromSteve += 1;
+      
+      document.getElementById("gold").innerHTML = goldPieces;
+      document.getElementById("magicItems").innerHTML = magicItems;
 
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
@@ -713,7 +716,7 @@ function generateEvent() {
 
       } else {
 
-        document.getElementById("eventLog").innerHTML = "You see something out of the corner of your eye. When you look, you see a piece of eight laying on a note that says \"You are almost ready to meet me. Keep fighting, my child.\" - Steve<br><br>";
+        document.getElementById("eventLog").innerHTML = "You see something out of the corner of your eye. When you look, you see a piece of eight laying on a note that says \"You are almost ready to meet me. Keep fighting, my child.\" - S<br><br>";
 
         piecesOfEight += 1;
 
