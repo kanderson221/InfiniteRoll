@@ -468,7 +468,7 @@ function generateEvent() {
 
     case 16: /////////////////////////////////////////////////////////////////////////////////////////////////
 
-      document.getElementById("eventLog").innerHTML = "Nohing happens!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "Nothing happens!<br><br>" + eventLog;
 
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
