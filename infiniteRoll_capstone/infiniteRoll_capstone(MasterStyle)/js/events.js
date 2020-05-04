@@ -464,20 +464,8 @@ function generateEvent() {
       break;
 
     case 16: /////////////////////////////////////////////////////////////////////////////////////////////////
-			document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
-
-      //Insert the picture into the enemy slot
-
-
-      //Load stats
-      document.getElementById("enemyName").innerHTML = "Goblin";
-      document.getElementById("enemyHp").innerHTML = "12";
-      document.getElementById("enemyStr").innerHTML = "12";
-      document.getElementById("enemyDex").innerHTML = "10";
-      document.getElementById("enemyCon").innerHTML = "12";
-      document.getElementById("enemyInt").innerHTML = "6";
-      document.getElementById("enemyWis").innerHTML = "8";
-      document.getElementById("enemyChr").innerHTML = "3";
+			document.getElementById("eventLog").innerHTML = "Nohing happens!<br><br>" + eventLog;
+			
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
