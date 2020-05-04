@@ -89,6 +89,8 @@ function generateEvent() {
       break;
 
     case 4: ////////////////////////////////////////////////////////////////////////////////////////
+      document.getElementById("rollButton").disabled = true;
+      
       document.getElementById("eventLog").innerHTML = "You encounter a merchant: Chester the Frugile<br><br>" + eventLog;
 
       //Insert Chester's picture in the picture slot
@@ -108,19 +110,33 @@ function generateEvent() {
       var shopBtn2 = document.createElement("BUTTON");
       var shopBtn3 = document.createElement("BUTTON");
       var sellBtn = document.createElement("BUTTON");
-      var lineBreak = document.createElement("br");
+      
+      //var lineBreak = document.createElement("br");
 
+      
+      var closeBtn = document.createElement("BUTTON");
+      
+      shopBtn1.setAttribute("class", "inPopOut");
+      shopBtn2.setAttribute("class", "inPopOut");
+      shopBtn3.setAttribute("class", "inPopOut");
+      sellBtn.setAttribute("class", "inPopOut");
+      closeBtn.setAttribute("class", "inPopOut");
+      
       shopBtn1.textContent = "Heal Character for: " + itemPrice1 + " gold";
       shopBtn2.textContent = "Sharpen Weapon for: " + itemPrice2 + " gold";
       shopBtn3.textContent = "Magic Item for: " + itemPrice3 + " gold";
 
       sellBtn.textContent = "Sell monster part for: " + sellPrice + " gold";
 
+      
+      closeBtn.textContent = "Leave Chester";
+      
+      
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
       //Add event listeners for buttons
-
+      
       //Heal Button
       shopBtn1.addEventListener("click", function(){
         if (playerCurrentHealth < playerMaxHealth) {
@@ -190,12 +206,21 @@ function generateEvent() {
           document.getElementById("monsterParts").innerHTML = monsterParts;
         }
       });
-
+      
+      closeBtn.addEventListener("click", function(){
+        document.getElementById("rollButton").disabled = false;
+        document.getElementById("detailRow").style.width = "0px";
+        generateEvent();
+      })
+      
+      document.getElementById("detailRow").style.width = "34%";
+      
       document.getElementById("detailRow").appendChild(shopBtn1);
       document.getElementById("detailRow").appendChild(shopBtn2);
       document.getElementById("detailRow").appendChild(shopBtn3);
-      document.getElementById("detailRow").appendChild(lineBreak);
+      //document.getElementById("detailRow").appendChild(lineBreak);
       document.getElementById("detailRow").appendChild(sellBtn);
+      document.getElementById("detailRow").appendChild(closeBtn);
 
       break;
 

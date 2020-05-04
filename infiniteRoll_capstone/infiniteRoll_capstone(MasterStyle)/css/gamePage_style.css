@@ -31,24 +31,19 @@ button:hover {
   text-align:justify; 
 } 
 
-
-
-
-/* The side navigation menu */
 #playerArea {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
   left: 0;
-  background-color: black; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  background-color: black;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
 }
 
-/* The navigation menu links */
 #playerArea .inPopOut {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
@@ -66,7 +61,6 @@ button:hover {
   transition: 0.3s;
 }
 
-/* Position and style the close button (top right corner) */
 #playerArea .closebtn {
   position: absolute;
   top: 0;
@@ -75,26 +69,24 @@ button:hover {
   margin-left: 50px;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   #playerArea {padding-top: 15px;}
   #playerArea .inPopOut {font-size: 18px;}
 }
 
 #inventoryArea {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
   left: 0;
-  background-color: black; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  background-color: black;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
 }
 
-/* The navigation menu links */
 #inventoryArea .inPopOut {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
@@ -112,7 +104,6 @@ button:hover {
   transition: 0.3s;
 }
 
-/* Position and style the close button (top right corner) */
 #inventoryArea .closebtn {
   position: absolute;
   top: 0;
@@ -121,8 +112,38 @@ button:hover {
   margin-left: 50px;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   #playerArea {padding-top: 15px;}
   #playerArea .inPopOut {font-size: 18px;}
+}
+
+#detailRow {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: black;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+
+#detailRow .inPopOut {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+#detailRow .inPopOut:hover {
+  color: deepskyblue;
+}
+
+@media screen and (max-height: 450px) {
+  #detailRow {padding-top: 15px;}
+  #detailRow .inPopOut {font-size: 18px;}
 }
