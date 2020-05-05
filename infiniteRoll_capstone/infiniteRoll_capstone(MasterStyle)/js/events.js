@@ -17,7 +17,7 @@ var enemyChrHTML = document.getElementById("enemyChr");
 var eventID = 0;
 var goldPieces = parseInt(goldHTML.innerHTML);
 var piecesOfEight = 0;
-var magicItems = magicItemsHTML.innerHTML;
+var magicItems = parseInt(magicItemsHTML.innerHTML);
 var monsterParts = 0;
 var messagesFromSteve = 0;
 
@@ -544,10 +544,11 @@ function generateEvent() {
       enemyImageHTML.src = "images/circle.png";
 
       //Subtract the gold from the player
-      goldPieces -= 3
+      goldPieces -= 3;
+      goldHTML.innerHTML = goldPieces;
       
       //Add to total log
-      eventLog = eventLogHTML.innerHTML
+      eventLog = eventLogHTML.innerHTML;
 
       break;
 
@@ -703,20 +704,12 @@ function generateEvent() {
       break;
 
     case 27: /////////////////////////////////////////////////////////////////////////////////////////////////
-      eventLogHTML.innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      eventLogHTML.innerHTML = "You look down the path and see something glow. As you get closer, the glowing light appears to resemble a young girl. You call out to her, and you hear her scream followed by a bright light. When the light dies down, the girl is gone. You do see a piece of gold on the ground, along with a note. The note has nothing written on it, only a happy face drawn on by a child.<br><br>" + eventLog;
 
-      //Insert the picture into the enemy slot
-      enemyImageHTML.src = "images/goblinEnemy.jpg";
-
-      //Load stats
-      enemyNameHTML.innerHTML = "Goblin";
-      enemyHpHTML.innerHTML = "12";
-      enemyStrHTML.innerHTML = "12";
-      enemyDexHTML.innerHTML = "10";
-      enemyConHTML.innerHTML = "12";
-      enemyIntHTML.innerHTML = "6";
-      enemyWisHTML.innerHTML = "8";
-      enemyChrHTML.innerHTML = "3";
+      //Add the gold to the inventory
+      goldPieces += 1;
+      goldHTML.innerHTML = goldPieces;
+      
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
