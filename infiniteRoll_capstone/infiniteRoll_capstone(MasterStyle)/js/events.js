@@ -16,6 +16,22 @@ var playerCurrentHealth = playerMaxHealth;
 
 var eventLog = "You begin your journey through a strange land";
 
+var eventLogHTML = document.getElementById("eventLog");
+var goldHTML = document.getElementById("gold");
+var magicItemHTML = document.getElementById("magicItems");
+var piecesOfEightHTML = document.getElementById("pOE");
+var monsterPartsHTML = document.getElementById("monsterParts");
+
+var enemyNameHTML = document.getElementById("enemyName");
+var enemyImageHTML = document.getElementById("enemyImage");
+var enemyHpHTML = document.getElementById("enemyHp");
+var enemyStrHTML = document.getElementById("enemyStr");
+var enemyDexHTML = document.getElementById("enemyDex");
+var enemyConHTML = document.getElementById("enemyCon");
+var enemyIntHTML = document.getElementById("enemyInt");
+var enemyWisHTML = document.getElementById("enemyWis");
+var enemyChrHTML = document.getElementById("enemyChr");
+
 document.getElementById("eventLog").innerHTML = eventLog;
 document.getElementById("gold").innerHTML = goldPieces;
 document.getElementById("magicItems").innerHTML = magicItems;
