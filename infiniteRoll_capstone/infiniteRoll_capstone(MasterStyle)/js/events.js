@@ -522,20 +522,14 @@ function generateEvent() {
       break;
 
     case 18: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "You trip and drop 3 gold from your inventory<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
-      document.getElementById("enemyImage").src = "images/goblinEnemy.jpg";
+      document.getElementById("enemyImage").src = "images/circle.png";
 
-      //Load stats
-      document.getElementById("enemyName").innerHTML = "Goblin";
-      document.getElementById("enemyHp").innerHTML = "12";
-      document.getElementById("enemyStr").innerHTML = "12";
-      document.getElementById("enemyDex").innerHTML = "10";
-      document.getElementById("enemyCon").innerHTML = "12";
-      document.getElementById("enemyInt").innerHTML = "6";
-      document.getElementById("enemyWis").innerHTML = "8";
-      document.getElementById("enemyChr").innerHTML = "3";
+      //Subtract the gold from the player
+      goldPieces -= 3
+      
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
@@ -562,20 +556,11 @@ function generateEvent() {
       break;
 
     case 20: /////////////////////////////////////////////////////////////////////////////////////////////////
-      document.getElementById("eventLog").innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      document.getElementById("eventLog").innerHTML = "You hear some movement around the area, be careful. Someone may be watching you!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
-      document.getElementById("enemyImage").src = "images/goblinEnemy.jpg";
+      document.getElementById("enemyImage").src = "images/circle.png";
 
-      //Load stats
-      document.getElementById("enemyName").innerHTML = "Goblin";
-      document.getElementById("enemyHp").innerHTML = "12";
-      document.getElementById("enemyStr").innerHTML = "12";
-      document.getElementById("enemyDex").innerHTML = "10";
-      document.getElementById("enemyCon").innerHTML = "12";
-      document.getElementById("enemyInt").innerHTML = "6";
-      document.getElementById("enemyWis").innerHTML = "8";
-      document.getElementById("enemyChr").innerHTML = "3";
       //Add to total log
       eventLog = document.getElementById("eventLog").innerHTML
 
