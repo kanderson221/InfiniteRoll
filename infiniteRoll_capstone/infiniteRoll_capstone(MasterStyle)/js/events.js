@@ -38,6 +38,131 @@ magicItemsHTML.innerHTML = magicItems;
 piecesOfEightHTML.innerHTML = piecesOfEight;
 monsterPartsHTML.innerHTML = monsterParts;
 
+
+function monsterCombat(playerHp, playerStr, playerDex, playerCon, playerInt, playerWis, playerChr, enemyHp, enemyStr, enemyDex, enemyCon, enemyInt, enemyWis, enemyChr) {
+  
+  var randomPlayerNumber = 0;
+  var randomEnemyNumber = 0;
+  
+  var playerWinCount = 0;
+  var enemyWinCount = 0;
+  
+  
+  while (playerHp > 0 || enemyHp > 0) {
+    //Fight based on str
+    randomPlayerNumber = Math.floor(Math.random() * (playerStr) + 1);
+    randomEnemyNumber = Math.floor(Math.random() * (enemyStr) + 1);
+    if(randomPlayerNumber > randomEnemyNumber) {
+      playerWinCount += 1;
+    }
+    else if (randomPlayerNumber < randomEnemyNumber) {
+      enemyWinCount += 1;
+    }
+    else {
+      playerWinCount +=1;
+      enemyWinCount +=1;
+    }
+  
+    //Fight based on dex
+    randomPlayerNumber = Math.floor(Math.random() * (playerDex) + 1);
+    randomEnemyNumber = Math.floor(Math.random() * (enemyDex) + 1);
+    if(randomPlayerNumber > randomEnemyNumber) {
+      playerWinCount += 1;
+    }
+    else if (randomPlayerNumber < randomEnemyNumber) {
+      enemyWinCount += 1;
+    }
+    else {
+      playerWinCount +=1;
+      enemyWinCount +=1;
+    }
+
+    //Fight based on con
+    randomPlayerNumber = Math.floor(Math.random() * (playerCon) + 1);
+    randomEnemyNumber = Math.floor(Math.random() * (enemyDex) + 1);
+    if(randomPlayerNumber > randomEnemyNumber) {
+      playerWinCount += 1;
+    }
+    else if (randomPlayerNumber < randomEnemyNumber) {
+      enemyWinCount += 1;
+    }
+    else {
+      playerWinCount +=1;
+      enemyWinCount +=1;
+    }
+
+    //Fight based on int
+    randomPlayerNumber = Math.floor(Math.random() * (playerInt) + 1);
+    randomEnemyNumber = Math.floor(Math.random() * (enemyInt) + 1);
+    if(randomPlayerNumber > randomEnemyNumber) {
+      playerWinCount += 1;
+    }
+    else if (randomPlayerNumber < randomEnemyNumber) {
+      enemyWinCount += 1;
+    }
+    else {
+      playerWinCount +=1;
+      enemyWinCount +=1;
+    }
+
+    //Fight based on wis
+    randomPlayerNumber = Math.floor(Math.random() * (playerWis) + 1);
+    randomEnemyNumber = Math.floor(Math.random() * (enemyWis) + 1);
+    if(randomPlayerNumber > randomEnemyNumber) {
+      playerWinCount += 1;
+    }
+    else if (randomPlayerNumber < randomEnemyNumber) {
+      enemyWinCount += 1;
+    }
+    else {
+      playerWinCount +=1;
+      enemyWinCount +=1;
+    }
+
+    //Fight based on chr
+    randomPlayerNumber = Math.floor(Math.random() * (playerChr) + 1);
+    randomEnemyNumber = Math.floor(Math.random() * (enemyChr) + 1);
+    if(randomPlayerNumber > randomEnemyNumber) {
+      playerWinCount += 1;
+    }
+    else if (randomPlayerNumber < randomEnemyNumber) {
+      enemyWinCount += 1;
+    }
+    else {
+      playerWinCount +=1;
+      enemyWinCount +=1;
+    }
+
+    //Deal Damage
+    if (playerWinCount == 4) {
+      enemyHp -= 1;
+    }
+    else if (playerWinCount == 5) {
+      enemyHp -= 2;
+    }
+    else if (playerWinCount == 6) {
+      enemyHp -= 3;
+    }
+    else {
+      enemyHp -= 0;
+    }
+
+    if (enemyWinCount == 4) {
+      playerHp -= 1;
+    }
+    else if (enemyWinCount == 5) {
+      playerHp -= 2;
+    }
+    else if (enemyWinCount == 6) {
+      playerHp -= 3;
+    }
+    else {
+      playerHp -= 0;
+    }
+  }
+}
+
+
 function generateEvent() {
   //Changed to math.floor for uniform distribution
   // the +1 makes the min and max inclusive
