@@ -49,15 +49,15 @@ monsterPartsHTML.innerHTML = monsterParts;
 
 
 function monsterCombat(playerHp, playerStr, playerDex, playerCon, playerInt, playerWis, playerChr, enemyHp, enemyStr, enemyDex, enemyCon, enemyInt, enemyWis, enemyChr) {
-  
+
   var randomPlayerNumber = 0;
   var randomEnemyNumber = 0;
-  
+
   var playerWinCount = 0;
   var enemyWinCount = 0;
-  
+
   enemyHp = parseInt(enemyHp);
-  
+
   //Fight based on str
   randomPlayerNumber = Math.floor(Math.random() * (parseInt(playerStr)) + 1);
   randomEnemyNumber = Math.floor(Math.random() * (parseInt(enemyStr)) + 1);
@@ -71,7 +71,7 @@ function monsterCombat(playerHp, playerStr, playerDex, playerCon, playerInt, pla
     playerWinCount +=1;
     enemyWinCount +=1;
   }
-  
+
   //Fight based on dex
   randomPlayerNumber = Math.floor(Math.random() * (parseInt(playerDex)) + 1);
   randomEnemyNumber = Math.floor(Math.random() * (parseInt(enemyDex)) + 1);
@@ -168,16 +168,19 @@ function monsterCombat(playerHp, playerStr, playerDex, playerCon, playerInt, pla
   else {
     playerHp -= 0;
   }
-  
+
   playerCurrentHealth = playerHp;
   playerHpHTML.innerHTML = playerCurrentHealth;
-  
+
   enemyHpHTML.innerHTML = enemyHp;
-  
-  if (playerCurrentHealth > 0 && enemyHpHTML > 0) {
+
+  if (playerCurrentHealth <= 0 || enemyHpHTML <= 0) {
     document.getElementById("rollButton").disabled = false;
     document.getElementById("detailRow").style.width = "0px";
     generateEvent();
+  } else {
+    document.getElementById("combatLog").innerHTML = playerNameHTML.innerHTML + " now has " + playerCurrentHealth + " health<br>";
+    document.getElementById("combatLog").innerHTML += enemyNameHTML.innerHTML + " now has " + enemyHpHTML.innerHTML + " health";
   }
 }
 
@@ -202,7 +205,7 @@ function generateEvent() {
   enemyChrHTML.innerHTML = "";
 
   //Clear the detailRow div
-  document.getElementById("detailRow").innerHTML = "";
+  document.getElementById("detailRow").innerHTML = "<p id=\"combatLog\" class=\"inPopOut\"></p>";
 
   switch (eventID) {
     case 1: //////////////////////////////////////////////////////////////////////////////////////////////
@@ -250,7 +253,7 @@ function generateEvent() {
 
     case 4: ////////////////////////////////////////////////////////////////////////////////////////
       document.getElementById("rollButton").disabled = true;
-      
+
       eventLogHTML.innerHTML = "You encounter a merchant: Chester the Frugile<br><br>" + eventLog;
 
       //Insert Chester's picture in the picture slot
@@ -270,33 +273,33 @@ function generateEvent() {
       var shopBtn2 = document.createElement("BUTTON");
       var shopBtn3 = document.createElement("BUTTON");
       var sellBtn = document.createElement("BUTTON");
-      
+
       //var lineBreak = document.createElement("br");
 
-      
+
       var closeBtn = document.createElement("BUTTON");
-      
+
       shopBtn1.setAttribute("class", "inPopOut");
       shopBtn2.setAttribute("class", "inPopOut");
       shopBtn3.setAttribute("class", "inPopOut");
       sellBtn.setAttribute("class", "inPopOut");
       closeBtn.setAttribute("class", "inPopOut");
-      
+
       shopBtn1.textContent = "Heal Character for: " + itemPrice1 + " gold";
       shopBtn2.textContent = "Sharpen Weapon for: " + itemPrice2 + " gold";
       shopBtn3.textContent = "Magic Item for: " + itemPrice3 + " gold";
 
       sellBtn.textContent = "Sell monster part for: " + sellPrice + " gold";
 
-      
+
       closeBtn.textContent = "Leave Chester";
-      
-      
+
+
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
       //Add event listeners for buttons
-      
+
       //Heal Button
       shopBtn1.addEventListener("click", function(){
         if (playerCurrentHealth < playerMaxHealth) {
@@ -366,15 +369,15 @@ function generateEvent() {
           monsterPartsHTML.innerHTML = monsterParts;
         }
       });
-      
+
       closeBtn.addEventListener("click", function(){
         document.getElementById("rollButton").disabled = false;
         document.getElementById("detailRow").style.width = "0px";
         generateEvent();
       })
-      
+
       document.getElementById("detailRow").style.width = "34%";
-      
+
       document.getElementById("detailRow").appendChild(shopBtn1);
       document.getElementById("detailRow").appendChild(shopBtn2);
       document.getElementById("detailRow").appendChild(shopBtn3);
@@ -412,7 +415,7 @@ function generateEvent() {
         eventLogHTML.innerHTML += "Chester the Generous gives you a magical item for your bravery.<br><br>";
 
       }
-      
+
       //Possibly a problem
       eventLogHTML.innerHTML += eventLog;
 
@@ -449,41 +452,38 @@ function generateEvent() {
     case 7: /////////////////////////////////////////////////////////////////////////////////////////////////
       // Kyle
       eventLogHTML.innerHTML = "He is an ent, he speaks for the trees. The ent has come to break your knees.<br><br>" + eventLog;
-      
+
       //Insert the picture into the enemy slot
-      
+
 
       //Load stats
       enemyNameHTML.innerHTML = "Ent";
-      enemyHpHTML.innerHTML = "200";
-      enemyStrHTML.innerHTML = "15";
-      enemyDexHTML.innerHTML = "10";
-      enemyConHTML.innerHTML = "3";
-      enemyIntHTML.innerHTML = "11";
-      enemyWisHTML.innerHTML = "9";
-      enemyChrHTML.innerHTML = "6";
+      enemyHpHTML.innerHTML = 200;
+      enemyStrHTML.innerHTML = 15;
+      enemyDexHTML.innerHTML = 10;
+      enemyConHTML.innerHTML = 3;
+      enemyIntHTML.innerHTML = 11;
+      enemyWisHTML.innerHTML = 9;
+      enemyChrHTML.innerHTML = 6;
 
       //Pop out the detailed row
       document.getElementById("detailRow").style.width = "34%";
       document.getElementById("rollButton").disabled = true;
-      
+
       //Create the elements for combat
-      var combatLog = document.createElement("P");
       var combatButton = document.createElement("BUTTON");
-      
-      combatLog.setAttribute("class", "inPopOut");
+
+      combatButton.textContent = "Next Combat Round";
+
       combatButton.setAttribute("class", "inPopOut");
-      
+
       combatButton.addEventListener("click", monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML));
-      
-      document.getElementById("detailRow").appendChild(combatLog);
+
       document.getElementById("detailRow").appendChild(combatButton);
-      
+
       //Commence combat
-      if (playerCurrentHealth > 0 && enemyHpHTML > 0) {
-        combatLog.innerHTML = playerNameHTML + " now has " + playerCurrentHealth + " health";
-        combatLog.innerHTML = enemyNameHTML + " now has " + enemyHpHTML.innerHTML + " health";
-      }
+      document.getElementById("combatLog").innerHTML = playerNameHTML.innerHTML + " now has " + playerCurrentHealth + " health<br>";
+      document.getElementById("combatLog").innerHTML += enemyNameHTML.innerHTML + " now has " + enemyHpHTML.innerHTML + " health";
 
       //Add to total log
       eventLog = eventLogHTML.innerHTML
@@ -649,10 +649,10 @@ function generateEvent() {
       enemyIntHTML.innerHTML = "6";
       enemyWisHTML.innerHTML = "8";
       enemyChrHTML.innerHTML = "3";
-      
+
       //Commence combat
       monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML);
-      
+
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
@@ -673,10 +673,10 @@ function generateEvent() {
       enemyIntHTML.innerHTML = "6";
       enemyWisHTML.innerHTML = "8";
       enemyChrHTML.innerHTML = "3";
-      
+
       //Commence combat
       monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML);
-      
+
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
@@ -706,10 +706,10 @@ function generateEvent() {
       enemyIntHTML.innerHTML = "6";
       enemyWisHTML.innerHTML = "8";
       enemyChrHTML.innerHTML = "3";
-      
+
       //Commence combat
       monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML);
-      
+
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
@@ -724,7 +724,7 @@ function generateEvent() {
       //Subtract the gold from the player
       goldPieces -= 3;
       goldHTML.innerHTML = goldPieces;
-      
+
       //Add to total log
       eventLog = eventLogHTML.innerHTML;
 
@@ -738,21 +738,21 @@ function generateEvent() {
 
       //Load stats
       if (playerCurrentHealth < playerMaxHealth) {
-       
-            playerCurrentHealth += 2;
 
-            if (playerCurrentHealth > playerMaxHealth) {
-              playerCurrentHealth = playerMaxHealth;
-            }
+        playerCurrentHealth += 2;
 
-            eventLogHTML.innerHTML = "You healed for 2 hp.<br><br>" + eventLog;
-
-            //Add to total log
-            eventLog = eventLogHTML.innerHTML
-
-            playerHpHTML.innerHTML = playerCurrentHealth;
-          
+        if (playerCurrentHealth > playerMaxHealth) {
+          playerCurrentHealth = playerMaxHealth;
         }
+
+        eventLogHTML.innerHTML = "You healed for 2 hp.<br><br>" + eventLog;
+
+        //Add to total log
+        eventLog = eventLogHTML.innerHTML
+
+        playerHpHTML.innerHTML = playerCurrentHealth;
+
+      }
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
@@ -784,10 +784,10 @@ function generateEvent() {
       enemyIntHTML.innerHTML = "6";
       enemyWisHTML.innerHTML = "8";
       enemyChrHTML.innerHTML = "3";
-      
+
       //Commence combat
       monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML);
-      
+
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
@@ -798,7 +798,7 @@ function generateEvent() {
 
       //Insert the picture into the enemy slot
       enemyImageHTML.src = "images/goblinEnemy.jpg";
-			
+
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
@@ -819,7 +819,7 @@ function generateEvent() {
       enemyIntHTML.innerHTML = "6";
       enemyWisHTML.innerHTML = "8";
       enemyChrHTML.innerHTML = "3";
-      
+
       //Commence combat
       monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML);
 
@@ -843,10 +843,10 @@ function generateEvent() {
       enemyIntHTML.innerHTML = "6";
       enemyWisHTML.innerHTML = "8";
       enemyChrHTML.innerHTML = "3";
-      
+
       //Commence combat
       monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML);
-      
+
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
@@ -867,10 +867,10 @@ function generateEvent() {
       enemyIntHTML.innerHTML = "6";
       enemyWisHTML.innerHTML = "8";
       enemyChrHTML.innerHTML = "3";
-      
+
       //Commence combat
       monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML);
-      
+
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
@@ -891,10 +891,10 @@ function generateEvent() {
       enemyIntHTML.innerHTML = "6";
       enemyWisHTML.innerHTML = "8";
       enemyChrHTML.innerHTML = "3";
-      
+
       //Commence combat
       monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML);
-      
+
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
@@ -906,7 +906,7 @@ function generateEvent() {
       //Add the gold to the inventory
       goldPieces += 1;
       goldHTML.innerHTML = goldPieces;
-      
+
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
@@ -927,10 +927,10 @@ function generateEvent() {
       enemyIntHTML.innerHTML = "6";
       enemyWisHTML.innerHTML = "8";
       enemyChrHTML.innerHTML = "3";
-      
+
       //Commence combat
       monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML);
-      
+
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
@@ -951,10 +951,10 @@ function generateEvent() {
       enemyIntHTML.innerHTML = "6";
       enemyWisHTML.innerHTML = "8";
       enemyChrHTML.innerHTML = "3";
-      
+
       //Commence combat
       monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML);
-      
+
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
@@ -975,10 +975,10 @@ function generateEvent() {
       enemyIntHTML.innerHTML = "6";
       enemyWisHTML.innerHTML = "8";
       enemyChrHTML.innerHTML = "3";
-      
+
       //Commence combat
       monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML);
-      
+
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
@@ -999,10 +999,10 @@ function generateEvent() {
       enemyIntHTML.innerHTML = "6";
       enemyWisHTML.innerHTML = "8";
       enemyChrHTML.innerHTML = "3";
-      
+
       //Commence combat
       monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML);
-      
+
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
@@ -1023,10 +1023,10 @@ function generateEvent() {
       enemyIntHTML.innerHTML = "6";
       enemyWisHTML.innerHTML = "8";
       enemyChrHTML.innerHTML = "3";
-      
+
       //Commence combat
       monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML);
-      
+
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
@@ -1047,10 +1047,10 @@ function generateEvent() {
       enemyIntHTML.innerHTML = "6";
       enemyWisHTML.innerHTML = "8";
       enemyChrHTML.innerHTML = "3";
-      
+
       //Commence combat
       monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML);
-      
+
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
@@ -1071,10 +1071,10 @@ function generateEvent() {
       enemyIntHTML.innerHTML = "6";
       enemyWisHTML.innerHTML = "8";
       enemyChrHTML.innerHTML = "3";
-      
+
       //Commence combat
       monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML);
-      
+
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
@@ -1095,10 +1095,10 @@ function generateEvent() {
       enemyIntHTML.innerHTML = "6";
       enemyWisHTML.innerHTML = "8";
       enemyChrHTML.innerHTML = "3";
-      
+
       //Commence combat
       monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML);
-      
+
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
@@ -1119,10 +1119,10 @@ function generateEvent() {
       enemyIntHTML.innerHTML = "6";
       enemyWisHTML.innerHTML = "8";
       enemyChrHTML.innerHTML = "3";
-      
+
       //Commence combat
       monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML);
-      
+
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
@@ -1143,10 +1143,10 @@ function generateEvent() {
       enemyIntHTML.innerHTML = "6";
       enemyWisHTML.innerHTML = "8";
       enemyChrHTML.innerHTML = "3";
-      
+
       //Commence combat
       monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML);
-      
+
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
@@ -1167,10 +1167,10 @@ function generateEvent() {
       enemyIntHTML.innerHTML = "6";
       enemyWisHTML.innerHTML = "8";
       enemyChrHTML.innerHTML = "3";
-      
+
       //Commence combat
       monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML);
-      
+
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
@@ -1181,7 +1181,7 @@ function generateEvent() {
 
       //Insert the picture into the enemy slot
       enemyImageHTML.src = "images/goblinEnemy.jpg";
-      
+
       //Load stats
       enemyNameHTML.innerHTML = "Goblin";
       enemyHpHTML.innerHTML = "12";
@@ -1191,10 +1191,10 @@ function generateEvent() {
       enemyIntHTML.innerHTML = "6";
       enemyWisHTML.innerHTML = "8";
       enemyChrHTML.innerHTML = "3";
-      
+
       //Commence combat
       monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML);
-      
+
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
@@ -1215,10 +1215,10 @@ function generateEvent() {
       enemyIntHTML.innerHTML = "6";
       enemyWisHTML.innerHTML = "8";
       enemyChrHTML.innerHTML = "3";
-      
+
       //Commence combat
       monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML);
-      
+
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
@@ -1239,10 +1239,10 @@ function generateEvent() {
       enemyIntHTML.innerHTML = "6";
       enemyWisHTML.innerHTML = "8";
       enemyChrHTML.innerHTML = "3";
-      
+
       //Commence combat
       monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML);
-      
+
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
@@ -1263,10 +1263,10 @@ function generateEvent() {
       enemyIntHTML.innerHTML = "6";
       enemyWisHTML.innerHTML = "8";
       enemyChrHTML.innerHTML = "3";
-      
+
       //Commence combat
       monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML);
-      
+
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
@@ -1287,10 +1287,10 @@ function generateEvent() {
       enemyIntHTML.innerHTML = "6";
       enemyWisHTML.innerHTML = "8";
       enemyChrHTML.innerHTML = "3";
-      
+
       //Commence combat
       monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML);
-      
+
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
@@ -1311,10 +1311,10 @@ function generateEvent() {
       enemyIntHTML.innerHTML = "6";
       enemyWisHTML.innerHTML = "8";
       enemyChrHTML.innerHTML = "3";
-      
+
       //Commence combat
       monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML);
-      
+
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
@@ -1335,10 +1335,10 @@ function generateEvent() {
       enemyIntHTML.innerHTML = "6";
       enemyWisHTML.innerHTML = "8";
       enemyChrHTML.innerHTML = "3";
-      
+
       //Commence combat
       monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML);
-      
+
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
@@ -1359,10 +1359,10 @@ function generateEvent() {
       enemyIntHTML.innerHTML = "6";
       enemyWisHTML.innerHTML = "8";
       enemyChrHTML.innerHTML = "3";
-      
+
       //Commence combat
       monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML);
-      
+
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
@@ -1383,10 +1383,10 @@ function generateEvent() {
       enemyIntHTML.innerHTML = "6";
       enemyWisHTML.innerHTML = "8";
       enemyChrHTML.innerHTML = "3";
-      
+
       //Commence combat
       monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML);
-      
+
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
@@ -1407,10 +1407,10 @@ function generateEvent() {
       enemyIntHTML.innerHTML = "6";
       enemyWisHTML.innerHTML = "8";
       enemyChrHTML.innerHTML = "3";
-      
+
       //Commence combat
       monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML);
-      
+
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
@@ -1431,10 +1431,10 @@ function generateEvent() {
       enemyIntHTML.innerHTML = "6";
       enemyWisHTML.innerHTML = "8";
       enemyChrHTML.innerHTML = "3";
-      
+
       //Commence combat
       monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML);
-      
+
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
