@@ -579,7 +579,7 @@ function generateEvent() {
       eventLogHTML.innerHTML = "You trip over a healing potion. Lucky for you it lands in your mouth and uncorks itself<br><br>" + eventLog;
 
       if (playerCurrentHealth < playerMaxHealth) {
-        playerCurrentHealth += 10;
+        playerCurrentHealth += 5;
 
         if (playerCurrentHealth > playerMaxHealth) {
           playerCurrentHealth = playerMaxHealth;
