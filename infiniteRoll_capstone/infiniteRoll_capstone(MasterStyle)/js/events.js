@@ -178,10 +178,15 @@ function monsterCombat(playerHp, playerStr, playerDex, playerCon, playerInt, pla
     document.getElementById("rollButton").disabled = false;
     document.getElementById("detailRow").style.width = "0px";
     generateEvent();
-  } else {
-    document.getElementById("combatLog").innerHTML = playerNameHTML.innerHTML + " now has " + playerCurrentHealth + " health<br>";
-    document.getElementById("combatLog").innerHTML += enemyNameHTML.innerHTML + " now has " + enemyHpHTML.innerHTML + " health";
   }
+  
+  document.getElementById("combatLog").innerHTML = playerNameHTML.innerHTML + " now has " + playerCurrentHealth + " health<br>";
+  document.getElementById("combatLog").innerHTML += enemyNameHTML.innerHTML + " now has " + enemyHpHTML.innerHTML + " health";
+  
+  if(document.getElementById("rollButton").disabled == true) {
+    alert("Hello");
+  }
+  
 }
 
 
