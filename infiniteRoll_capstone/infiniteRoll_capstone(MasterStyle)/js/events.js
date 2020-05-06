@@ -477,7 +477,9 @@ function generateEvent() {
 
       combatButton.setAttribute("class", "inPopOut");
 
-      combatButton.addEventListener("click", monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML));
+      combatButton.addEventListener("click", function() {
+        monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML)
+      });
 
       document.getElementById("detailRow").appendChild(combatButton);
 
