@@ -678,7 +678,7 @@ function generateEvent() {
       break;
 
     case 19: /////////////////////////////////////////////////////////////////////////////////////////////////
-      eventLogHTML.innerHTML = "You found a helth potion!<br><br>" + eventLog;
+      eventLogHTML.innerHTML = "You found a health potion!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
       enemyImageHTML.src = "images/goblinEnemy.jpg";
