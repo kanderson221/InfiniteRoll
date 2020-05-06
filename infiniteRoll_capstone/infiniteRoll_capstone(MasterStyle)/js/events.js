@@ -678,20 +678,28 @@ function generateEvent() {
       break;
 
     case 19: /////////////////////////////////////////////////////////////////////////////////////////////////
-      eventLogHTML.innerHTML = "A goblin springs out and attacks!<br><br>" + eventLog;
+      eventLogHTML.innerHTML = "You found a helth potion!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
       enemyImageHTML.src = "images/goblinEnemy.jpg";
 
       //Load stats
-      enemyNameHTML.innerHTML = "Goblin";
-      enemyHpHTML.innerHTML = "12";
-      enemyStrHTML.innerHTML = "12";
-      enemyDexHTML.innerHTML = "10";
-      enemyConHTML.innerHTML = "12";
-      enemyIntHTML.innerHTML = "6";
-      enemyWisHTML.innerHTML = "8";
-      enemyChrHTML.innerHTML = "3";
+      if (playerCurrentHealth < playerMaxHealth) {
+       
+            playerCurrentHealth += 2;
+
+            if (playerCurrentHealth > playerMaxHealth) {
+              playerCurrentHealth = playerMaxHealth;
+            }
+
+            eventLogHTML.innerHTML = "You healed for 2 hp.<br><br>" + eventLog;
+
+            //Add to total log
+            eventLog = eventLogHTML.innerHTML
+
+            document.getElementById("hp").innerHTML = playerCurrentHealth;
+          
+        }
       //Add to total log
       eventLog = eventLogHTML.innerHTML
 
