@@ -177,15 +177,12 @@ function monsterCombat(playerHp, playerStr, playerDex, playerCon, playerInt, pla
   if (playerCurrentHealth <= 0 || enemyHpHTML <= 0) {
     document.getElementById("rollButton").disabled = false;
     document.getElementById("detailRow").style.width = "0px";
+    monsterParts += Math.floor(Math.random() * (5 - 1 + 1) + 1);
     generateEvent();
   }
   
   document.getElementById("combatLog").innerHTML = playerNameHTML.innerHTML + " now has " + playerCurrentHealth + " health<br>";
   document.getElementById("combatLog").innerHTML += enemyNameHTML.innerHTML + " now has " + enemyHpHTML.innerHTML + " health";
-  
-  if(document.getElementById("rollButton").disabled == true) {
-    alert("Hello");
-  }
   
 }
 
@@ -194,7 +191,7 @@ function generateEvent() {
   //Changed to math.floor for uniform distribution
   // the +1 makes the min and max inclusive
   //Math.floor(Math.random() * (Max - Min + 1) + Min)
-  eventID = Math.floor(Math.random() * (51) + 1);
+  eventID = Math.floor(Math.random() * (51 - 1 + 1) + 1);
 
   //Clear the fields
   enemyNameHTML.innerHTML = "";
