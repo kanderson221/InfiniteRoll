@@ -5,30 +5,28 @@ img {
 }
 
 button:hover {
-    color:red;
+    color: red;
+}
+
+#enemyImage {
+  background-color: black;
 }
 
 #gameArea {
   border: 3px black solid;
 }
 
-/*
-#gameArea *, #inventory * {
-  background-color: grey;
-}
-*/
-
 .stat {
   font-size: 20px;
 }
 
 #eventLog { 
-  margin:4px, 4px; 
-  padding:4px;
+  margin: 4px, 4px; 
+  padding: 4px;
   height: 350px; 
   overflow-x: hidden; 
   overflow-x: auto; 
-  text-align:justify; 
+  text-align: justify; 
 } 
 
 #playerArea {
