@@ -29,6 +29,7 @@ var piecesOfEight = 0;
 var magicItems = parseInt(magicItemsHTML.innerHTML);
 var monsterParts = 0;
 var messagesFromSteve = 0;
+var playerToHitBoost = 0;
 
 if (magicItems != 0) {
   var playerDamageBoostMystical = magicItems;
@@ -59,7 +60,7 @@ function monsterCombat(playerHp, playerStr, playerDex, playerCon, playerInt, pla
   enemyHp = parseInt(enemyHp);
 
   //Fight based on str
-  randomPlayerNumber = Math.floor(Math.random() * (parseInt(playerStr)) + 1);
+  randomPlayerNumber = Math.floor(Math.random() * (parseInt(playerStr)) + 1 + playerToHitBoost);
   randomEnemyNumber = Math.floor(Math.random() * (parseInt(enemyStr)) + 1);
   if(randomPlayerNumber > randomEnemyNumber) {
     playerWinCount += 1;
@@ -73,7 +74,7 @@ function monsterCombat(playerHp, playerStr, playerDex, playerCon, playerInt, pla
   }
 
   //Fight based on dex
-  randomPlayerNumber = Math.floor(Math.random() * (parseInt(playerDex)) + 1);
+  randomPlayerNumber = Math.floor(Math.random() * (parseInt(playerDex)) + 1 + playerToHitBoost);
   randomEnemyNumber = Math.floor(Math.random() * (parseInt(enemyDex)) + 1);
   if(randomPlayerNumber > randomEnemyNumber) {
     playerWinCount += 1;
@@ -180,10 +181,10 @@ function monsterCombat(playerHp, playerStr, playerDex, playerCon, playerInt, pla
     monsterParts += Math.floor(Math.random() * (5 - 1 + 1) + 1);
     generateEvent();
   }
-  
+
   document.getElementById("combatLog").innerHTML = playerNameHTML.innerHTML + " now has " + playerCurrentHealth + " health<br>";
   document.getElementById("combatLog").innerHTML += enemyNameHTML.innerHTML + " now has " + enemyHpHTML.innerHTML + " health";
-  
+
 }
 
 //Event function //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -191,7 +192,7 @@ function generateEvent() {
   //Changed to math.floor for uniform distribution
   // the +1 makes the min and max inclusive
   //Math.floor(Math.random() * (Max - Min + 1) + Min)
-  eventID = Math.floor(Math.random() * (53 - 1 + 1) + 1);
+  eventID = Math.floor(Math.random() * (54 - 1 + 1) + 1);
 
   //Clear the fields
   enemyNameHTML.innerHTML = "";
@@ -409,7 +410,7 @@ function generateEvent() {
         eventLogHTML.innerHTML += "Chester the Generous gives you a magical item for your bravery.<br><br>";
 
       }
-      
+
       eventLogHTML.innerHTML += eventLog;
 
       //Add to total log
@@ -1167,7 +1168,7 @@ function generateEvent() {
         eventLogHTML.innerHTML += "Chester the Generous gives you a magical item for your bravery.<br><br>";
 
       }
-      
+
       eventLogHTML.innerHTML += eventLog;
 
       //Add to total log
@@ -1821,7 +1822,7 @@ function generateEvent() {
         eventLogHTML.innerHTML += "Chester the Generous gives you a magical item for your bravery.<br><br>";
 
       }
-      
+
       eventLogHTML.innerHTML += eventLog;
 
       //Add to total log
@@ -1993,16 +1994,42 @@ function generateEvent() {
     case 50: /////////////////////////////////////////////////////////////////////////////////////////////////
       if (messagesFromSteve >= 5) {
 
-        eventLogHTML.innerHTML = "Steve has determined you are now worth his time. May he have mercy on your soul...<br><br>" + eventLog;
+        alert("Steve has determined you are now worth his time. May he have mercy on your soul...");
 
-        //Insert the Steve picture into the enemy slot
-
+        /Insert the picture into the enemy slot
+        enemyImageHTML.src = "images/steve.jpg";
 
         //Load stats
+        enemyNameHTML.innerHTML = "Steve";
+        enemyHpHTML.innerHTML = 1;
+        enemyStrHTML.innerHTML = 22;
+        enemyDexHTML.innerHTML = 22;
+        enemyConHTML.innerHTML = 18;
+        enemyIntHTML.innerHTML = 18;
+        enemyWisHTML.innerHTML = 22;
+        enemyChrHTML.innerHTML = 50;
 
+
+        //Pop out the detailed row
+        document.getElementById("detailRow").style.width = "34%";
+        document.getElementById("rollButton").disabled = true;
+
+        //Create the elements for combat
+        var combatButton = document.createElement("BUTTON");
+
+        combatButton.textContent = "Next Combat Round";
+
+        combatButton.setAttribute("class", "inPopOut");
+
+        combatButton.addEventListener("click", function() {
+          monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML)
+        });
+
+        document.getElementById("detailRow").appendChild(combatButton);
 
         //Commence combat
-
+        document.getElementById("combatLog").innerHTML = playerNameHTML.innerHTML + " now has " + playerCurrentHealth + " health<br>";
+        document.getElementById("combatLog").innerHTML += enemyNameHTML.innerHTML + " now has " + enemyHpHTML.innerHTML + " health";
 
       } else {
 
@@ -2027,7 +2054,7 @@ function generateEvent() {
       eventLog = eventLogHTML.innerHTML
 
       break;
-      
+
     case 51: /////////////////////////////////////////////////////////////////////////////////////////////////
       eventLogHTML.innerHTML = "A goblin rushes out to attack...<br>Wait, no. It hands you a note that reads \"Hello, I am a goblin sent by S to welcome you to his land.\" <br>- Goblin #694B<br><br>" + eventLog;
 
@@ -2051,7 +2078,7 @@ function generateEvent() {
 
 
       break;
-      
+
     case 52: /////////////////////////////////////////////////////////////////////////
       eventLogHTML.innerHTML = "Suddenly you are smacked in the face by a flat metal object. It floats in front of you and proclaims itself Count Spatula, the Harbringer of Steve!<br><br>" + eventLog;
 
@@ -2095,8 +2122,8 @@ function generateEvent() {
 
 
       break;
-      
-      case 53: /////////////////////////////////////////////////////////////////////////
+
+    case 53: /////////////////////////////////////////////////////////////////////////
       eventLogHTML.innerHTML = "Bow wow babies! A wolf has come to feed... on you!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
@@ -2139,7 +2166,50 @@ function generateEvent() {
 
 
       break;
-    
+
+    case 54: /////////////////////////////////////////////////////////////////////////
+      eventLogHTML.innerHTML = "Bow wow babies! A wolf has come to feed... on you!<br><br>" + eventLog;
+
+      //Insert the picture into the enemy slot
+      enemyImageHTML.src = "images/wolf.jpg";
+
+      //Load stats
+      enemyNameHTML.innerHTML = "Wolf";
+      enemyHpHTML.innerHTML = 14;
+      enemyStrHTML.innerHTML = 12;
+      enemyDexHTML.innerHTML = 12;
+      enemyConHTML.innerHTML = 14;
+      enemyIntHTML.innerHTML = 3;
+      enemyWisHTML.innerHTML = 12;
+      enemyChrHTML.innerHTML = 3;
+
+
+      //Pop out the detailed row
+      document.getElementById("detailRow").style.width = "34%";
+      document.getElementById("rollButton").disabled = true;
+
+      //Create the elements for combat
+      var combatButton = document.createElement("BUTTON");
+
+      combatButton.textContent = "Next Combat Round";
+
+      combatButton.setAttribute("class", "inPopOut");
+
+      combatButton.addEventListener("click", function() {
+        monsterCombat(playerCurrentHealth, playerStrHTML.innerHTML, playerDexHTML.innerHTML, playerConHTML.innerHTML, playerIntHTML.innerHTML, playerWisHTML.innerHTML, playerChrHTML.innerHTML, enemyHpHTML.innerHTML, enemyStrHTML.innerHTML, enemyDexHTML.innerHTML, enemyConHTML.innerHTML, enemyIntHTML.innerHTML, enemyWisHTML.innerHTML, enemyChrHTML.innerHTML)
+      });
+
+      document.getElementById("detailRow").appendChild(combatButton);
+
+      //Commence combat
+      document.getElementById("combatLog").innerHTML = playerNameHTML.innerHTML + " now has " + playerCurrentHealth + " health<br>";
+      document.getElementById("combatLog").innerHTML += enemyNameHTML.innerHTML + " now has " + enemyHpHTML.innerHTML + " health";
+
+      //Add to total log
+      eventLog = eventLogHTML.innerHTML
+
+      break;
+
       //This should not trigger, but we have it just in case
     default:
       eventLogHTML.innerHTML = "You find one Gold piece<br><br>" + eventLog;
