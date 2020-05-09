@@ -48,6 +48,20 @@ magicItemsHTML.innerHTML = magicItems;
 piecesOfEightHTML.innerHTML = piecesOfEight;
 monsterPartsHTML.innerHTML = monsterParts;
 
+//Endgame function //////////////////////////////////////////////////////////////////////////////
+function endGame(playerHealth) {
+  
+  if(playerCurrentHealth > 0) {
+    alert(playerNameHTML.innerHTML + " has conquered the land of InfiniteRoll! Congratulations!");
+    window.location.href = "home.html";
+  } else {
+    alert(playerNameHTML.innerHTML + " has fallen in battle. The land is covered in darkness...");
+    window.location.href = "home.html";
+  }
+  
+  
+}
+
 //Combat function /////////////////////////////////////////////////////////////////////////////////
 function monsterCombat(playerHp, playerStr, playerDex, playerCon, playerInt, playerWis, playerChr, enemyHp, enemyStr, enemyDex, enemyCon, enemyInt, enemyWis, enemyChr) {
 
@@ -178,8 +192,13 @@ function monsterCombat(playerHp, playerStr, playerDex, playerCon, playerInt, pla
   if (playerCurrentHealth <= 0 || enemyHp <= 0) {
     document.getElementById("rollButton").disabled = false;
     document.getElementById("detailRow").style.width = "0px";
-    monsterParts += Math.floor(Math.random() * (5 - 1 + 1) + 1);
-    generateEvent();
+    
+    if (enemyNameHTML.innerHTML === "Steve") {
+      endGame();
+    } else {
+      monsterParts += Math.floor(Math.random() * (5 - 1 + 1) + 1);
+      generateEvent();
+    }
   }
 
   document.getElementById("combatLog").innerHTML = playerNameHTML.innerHTML + " now has " + playerCurrentHealth + " health<br>";
@@ -451,7 +470,7 @@ function generateEvent() {
 
       //Load stats
       enemyNameHTML.innerHTML = "Ent";
-      enemyHpHTML.innerHTML = 200;
+      enemyHpHTML.innerHTML = 100;
       enemyStrHTML.innerHTML = 15;
       enemyDexHTML.innerHTML = 10;
       enemyConHTML.innerHTML = 3;
@@ -1243,7 +1262,7 @@ function generateEvent() {
 
       //Load stats
       enemyNameHTML.innerHTML = "Ent";
-      enemyHpHTML.innerHTML = 200;
+      enemyHpHTML.innerHTML = 100;
       enemyStrHTML.innerHTML = 15;
       enemyDexHTML.innerHTML = 10;
       enemyConHTML.innerHTML = 3;

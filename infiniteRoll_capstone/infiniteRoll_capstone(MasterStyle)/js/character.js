@@ -2,7 +2,7 @@ var name = prompt("What is your character's name?");
 
 while (name === "") {
 
-  name = prompt("Please enter a name.");    
+  var name = prompt("Please enter a name.");
 
 }
 
