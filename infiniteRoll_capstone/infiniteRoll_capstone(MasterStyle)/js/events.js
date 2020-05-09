@@ -2080,7 +2080,7 @@ function generateEvent() {
       break;
 
     case 52: /////////////////////////////////////////////////////////////////////////
-      eventLogHTML.innerHTML = "Suddenly you are smacked in the face by a flat metal object. It floats in front of you and proclaims itself Count Spatula, the Harbringer of Steve!<br><br>" + eventLog;
+      eventLogHTML.innerHTML = "Suddenly you are smacked in the face by a flat metal object. It floats in front of you and proclaims itself Count Spatula, the Harbinger of Steve!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
       enemyImageHTML.src = "images/countSpatula.jpg";
