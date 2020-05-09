@@ -1996,7 +1996,7 @@ function generateEvent() {
 
         alert("Steve has determined you are now worth his time. May he have mercy on your soul...");
 
-        /Insert the picture into the enemy slot
+        //Insert the picture into the enemy slot
         enemyImageHTML.src = "images/steve.jpg";
 
         //Load stats
