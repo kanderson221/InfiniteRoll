@@ -48,20 +48,6 @@ magicItemsHTML.innerHTML = magicItems;
 piecesOfEightHTML.innerHTML = piecesOfEight;
 monsterPartsHTML.innerHTML = monsterParts;
 
-//Endgame function //////////////////////////////////////////////////////////////////////////////
-function endGame(playerHealth) {
-  
-  if(playerCurrentHealth > 0) {
-    alert(playerNameHTML.innerHTML + " has conquered the land of InfiniteRoll! Congratulations!");
-    window.location.href = "home.html";
-  } else {
-    alert(playerNameHTML.innerHTML + " has fallen in battle. The land is covered in darkness...");
-    window.location.href = "home.html";
-  }
-  
-  
-}
-
 //Combat function /////////////////////////////////////////////////////////////////////////////////
 function monsterCombat(playerHp, playerStr, playerDex, playerCon, playerInt, playerWis, playerChr, enemyHp, enemyStr, enemyDex, enemyCon, enemyInt, enemyWis, enemyChr) {
 
@@ -187,17 +173,31 @@ function monsterCombat(playerHp, playerStr, playerDex, playerCon, playerInt, pla
   playerCurrentHealth = playerHp;
   playerHpHTML.innerHTML = playerCurrentHealth;
 
-  enemyHpHTML.innerHTML = enemyHp;
+  var enemyCurrentHealth = enemyHp;
+  enemyHpHTML.innerHTML = enemyCurrentHealth;
 
-  if (playerCurrentHealth <= 0 || enemyHp <= 0) {
-    document.getElementById("rollButton").disabled = false;
-    document.getElementById("detailRow").style.width = "0px";
-    
-    if (enemyNameHTML.innerHTML === "Steve") {
-      endGame();
-    } else {
-      monsterParts += Math.floor(Math.random() * (5 - 1 + 1) + 1);
-      generateEvent();
+  if (playerCurrentHealth <= 0 || enemyCurrentHealth <= 0) {
+    if (playerCurrentHealth <= 0) {
+      alert(playerNameHTML.innerHTML + " has fallen in battle. The land is covered in darkness...");
+      window.location.href = "home.html";
+    }
+    else {
+      if (enemyNameHTML.innerHTML === "Steve") {
+        alert(playerNameHTML.innerHTML + " has conquered the land of InfiniteRoll! Congratulations!");
+        window.location.href = "home.html";
+      }
+      else {
+        document.getElementById("rollButton").disabled = false;
+        document.getElementById("detailRow").style.width = "0px";
+        
+        alert(playerNameHTML.innerHTML + " has beaten the " + enemyNameHTML.innerHTML);
+        
+        monsterParts += Math.floor(Math.random() * (5 - 1 + 1) + 1);
+        
+        monsterPartsHTML.innerHTML = monsterParts;
+        
+        generateEvent(); 
+      }
     }
   }
 
@@ -2146,7 +2146,7 @@ function generateEvent() {
       eventLogHTML.innerHTML = "Bow wow babies! A wolf has come to feed... on you!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
-      enemyImageHTML.src = "images/wolf.jpg";
+      enemyImageHTML.src = "images/wolfEnemy.jpg";
 
       //Load stats
       enemyNameHTML.innerHTML = "Wolf";
@@ -2190,7 +2190,7 @@ function generateEvent() {
       eventLogHTML.innerHTML = "Bow wow babies! A wolf has come to feed... on you!<br><br>" + eventLog;
 
       //Insert the picture into the enemy slot
-      enemyImageHTML.src = "images/wolf.jpg";
+      enemyImageHTML.src = "images/wolfEnemy.jpg";
 
       //Load stats
       enemyNameHTML.innerHTML = "Wolf";
